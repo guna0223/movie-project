@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-import MovieCard from "./components/MovieCard";
+import MovieCard from "./components/MovieCard/MovieCard";
 import Home from "./pages/Home";
 
 
