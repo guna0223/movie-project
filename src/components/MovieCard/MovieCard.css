@@ -75,11 +75,6 @@ main {
     height: 100vh;
 }
 
-@media screen and (max-width:350px) {
-    .card{
-        width: 250px;
-    }
-}
 
 .card {
     background: radial-gradient(circle, rgb(169, 169, 169) 0%, rgb(185, 185, 189) 90%);
@@ -126,6 +121,7 @@ main {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         margin: 0px;
+        width: 250px;
     }
 }
 
@@ -136,5 +132,19 @@ main {
         gap: 15px;
         margin: auto;
         width: 400px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    main{
+
+        background-color: red;
+    }
+    .movie-grid {
+        width: 250px;
+    }
+
+    .card {
+        width: 250px;
     }
 }
