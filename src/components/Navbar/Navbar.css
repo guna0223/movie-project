@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(rgb(39, 38, 38), rgb(96, 96, 97));
+    background-blend-mode: multiply;
+    color: white;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 90px;
+    font-family: "Pacifico", cursive;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.nav-links {
+    display: flex;
+
+    .nav-items {
+        display: flex;
+        margin-top: 20px;
+
+        .nav-item {
+            margin-left: 20px;
+            list-style: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+        }
+    }
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    filter: brightness(100%);
+}

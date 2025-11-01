@@ -1,9 +1,132 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 500ms;
 }
-.card{
+
+/* form */
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.search-input {
+    width: 280px;
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    border-style: none;
+    outline: none;
+    transition: 0.3s ease;
+    font-family: "Playfair Display", serif;
+}
+
+.search-input:focus {
+    border-color: #d8d4d4;
+    box-shadow: 0 0 8px rgba(233, 229, 229, 0.5);
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.search-button:hover {
+    border-radius: 2px;
+    background-color: #bab8b8;
+    box-shadow: 0 0 8px rgba(187, 179, 180, 0.5);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .search-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-input {
+        width: 90%;
+    }
+
+    .search-button {
+        width: 90%;
+    }
+}
+
+.home {
+    margin-top: 90px;
+}
+
+main {
+    margin-top: 90px;
+    background: radial-gradient(circle, rgb(76, 75, 75) 0%, rgb(185, 185, 189) 90%);
+    background: radial-gradient(circle, rgb(72, 71, 71) 0%, rgb(185, 185, 189) 90%);
+    height: 100vh;
+}
+
+.card {
+    background: radial-gradient(circle, rgb(169, 169, 169) 0%, rgb(185, 185, 189) 90%);
+    font-family: "Playfair Display", serif;
+}
+
+/* card btn */
+.btn {
+    position: fixed;
+    margin-top: -45px;
+    margin-left: 130px;
+}
+
+.card:hover {
+    transform: scaleY(1.05);
+    transition: 500ms;
+}
+
+.search-input {
+    margin-top: 20px;
+}
+
+.container-fluid {
+    margin-top: 20px;
+}
+
+.movie-poster {
+    margin: auto;
+}
+
+.movie-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 0px;
+}
+
+@media screen and (max-width:700px) {
+    .movie-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .movie-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: auto;
+        width: 400px;
+    }
 }

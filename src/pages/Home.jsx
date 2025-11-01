@@ -1,6 +1,7 @@
 import MovieCard from "../components/MovieCard/MovieCard";
 import { useState } from "react";
 
+
 const Home = () => {
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -19,10 +20,20 @@ const Home = () => {
             id: 3,
             title: "John Wick-3",
             release_date: "2024"
+        },
+        {
+            id: 4,
+            title: "John Wick-4",
+            release_date: "2025"
+        },
+        {
+            id: 5,
+            title: "John Wick-5",
+            release_date: "2027"
         }
     ];
     const handelSearch = () => {
-        e.preventDefault(); 
+        e.preventDefault();
         alert(searchQuery)
     }
 
@@ -30,7 +41,7 @@ const Home = () => {
         <>
             <div className="home">
                 <form onSubmit={handelSearch} className="search-form">
-                    <input type="text"
+                    <input type="text" 
                         placeholder="Search for movie"
                         className="search-input"
                         value={searchQuery}
@@ -39,10 +50,13 @@ const Home = () => {
                     <button type="submit"
                         className="search-button">Search</button>
                 </form>
-                <div className=" movies_grid row">
-                    {movies.map((movie) => (
-                        <MovieCard movie={movie} key={movie.id} />
-                    ))}
+
+                <div className="container-fluid">
+                    <div className="row movie-grid">
+                        {movies.map((movie) => (
+                            <MovieCard movie={movie} key={movie.id} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </>
