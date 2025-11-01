@@ -17,6 +17,9 @@ const App = () => {
             <main>
                 <Home />
             </main>
+            <footer>
+
+            </footer>
         </>
     )
 }
