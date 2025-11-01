@@ -135,11 +135,17 @@ main {
     }
 }
 
-@media screen and (max-width:300px) {
-    main{
-
-        background-color: red;
+@media screen and (max-width:400px) {
+    .movie-grid {
+        width: 250px;
     }
+
+    .card {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width:350px) {
     .movie-grid {
         width: 250px;
     }
