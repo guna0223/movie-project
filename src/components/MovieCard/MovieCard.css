@@ -135,7 +135,7 @@ main {
     }
 }
 
-@media screen and (max-width:350px) {
+@media screen and (max-width:300px) {
     main{
 
         background-color: red;
