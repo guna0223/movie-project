@@ -28,20 +28,20 @@ const Home = () => {
         },
         {
             id: 5,
-            title: "John Wick-5",
+            title: "3",
             release_date: "2027"
         }
     ];
-    const handelSearch = () => {
+    const handelSearch = (e) => {
         e.preventDefault();
-        alert(searchQuery)
+        alert(searchQuery);
     }
 
     return (
         <>
             <div className="home">
                 <form onSubmit={handelSearch} className="search-form">
-                    <input type="text" 
+                    <input type="text"
                         placeholder="Search for movie"
                         className="search-input"
                         value={searchQuery}
@@ -53,9 +53,12 @@ const Home = () => {
 
                 <div className="container-fluid">
                     <div className="row movie-grid">
-                        {movies.map((movie) => (
-                            <MovieCard movie={movie} key={movie.id} />
-                        ))}
+                        {movies.map(
+                            (movie) =>
+                                movie.title.toLocaleLowerCase().startsWith(searchQuery) && (
+                                    <MovieCard movie={movie} key={movie.id} />
+                                )
+                        )}
                     </div>
                 </div>
             </div>
