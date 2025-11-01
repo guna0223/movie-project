@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./MovieCard.css"
+import "../Css/MovieCard.css"
 
 const MovieCard = ({ movie }) => {
     function OnFavoriteClick() {

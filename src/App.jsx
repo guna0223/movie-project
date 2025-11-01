@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css"
+import "./components/Css/App.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "./components/Navbar/Navbar";

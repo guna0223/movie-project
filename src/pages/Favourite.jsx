@@ -1,9 +1,12 @@
+import React from "react";
+import "../components/Css/Favourite.css";
+
 const Favourite = () => {
     return (
         <>
-        <div className="favorites-empty">
-            <h2>no Favorite Movies Yet</h2>
-        </div>
+            <div className="favorites-empty">
+                <h2>no Favorite Movies Yet</h2>
+            </div>
         </>
     )
 };
