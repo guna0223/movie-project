@@ -72,8 +72,13 @@
 main {
     margin-top: 90px;
     background: radial-gradient(circle, rgb(76, 75, 75) 0%, rgb(185, 185, 189) 90%);
-    background: radial-gradient(circle, rgb(72, 71, 71) 0%, rgb(185, 185, 189) 90%);
     height: 100vh;
+}
+
+@media screen and (max-width:350px) {
+    .card{
+        width: 250px;
+    }
 }
 
 .card {
