@@ -256,6 +256,7 @@ main {
         grid-template-columns: 1fr;
         max-width: 250px;
         margin: auto;
+  
     }
 }
 
