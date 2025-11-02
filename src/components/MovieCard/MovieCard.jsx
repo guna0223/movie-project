@@ -65,6 +65,8 @@ const MovieCard = ({ movie }) => {
                 <div className="movie-info">
                     <h3>{movie.title}</h3>
                     <p>{movie.release_date?.split("-")[0]}</p>
+                    
+                    <p className="rating-fill">⭐{movie.vote_average}</p>
                 </div>
             </div>
         </div>
