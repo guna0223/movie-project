@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+main{
+    height: 100vh;
+}
 /* Page heading */
 .headiing {
     text-align: center;
