@@ -50,14 +50,23 @@ const Home = () => {
                 <button type="submit" className="search-button">Search</button>
             </form>
 
-            <div className="container-fluid">
-                <div className="row movie-grid">
-                    {movies.map((movie) => (
-                        <MovieCard movie={movie} key={movie.id} />
-                    ))}
-                </div>
-            </div>
-        </div>
+            {error && <div className="error_message">{error}</div>}
+
+            {
+                loading ?
+                    (<div className="loading">Loadding....</div>
+                    ) : (
+
+                        < div className="container-fluid">
+                            <div className="row movie-grid">
+                                {movies.map((movie) => (
+                                    <MovieCard movie={movie} key={movie.id} />
+                                ))}
+                            </div>
+                        </div>
+                    )
+            }
+        </div >
     );
 };
 

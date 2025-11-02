@@ -72,7 +72,7 @@
 main {
     margin-top: 90px;
     background: radial-gradient(circle, rgb(76, 75, 75) 0%, rgb(185, 185, 189) 90%);
-    height: 100vh;
+    height: 100%;
 }
 
 
@@ -85,15 +85,26 @@ main {
 
 /* card hover */
 .card:hover {
-    transform: scaleY(1.05);
+    transform: scale(1.05);
     transition: 500ms;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+    .btn-one{
+        display: block;
+    }
+}
+
+.card-img-top {
+    margin-top: 20px;
 }
 
 /* card btn */
-.btn {
+.btn-one {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 20px;
+    text-decoration: none;
+    display: none;
 }
 
 .search-input {
@@ -110,17 +121,31 @@ main {
 
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     margin: 0px;
 }
 
+/* movie view */
 @media screen and (max-width:700px) {
     .movie-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         margin: 0px;
+    }
+
+    .card {
+        .card-img-top {
+            /* height: 200px; */
+            margin-top: 10px;
+        }
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        transition: 500ms;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     }
 }
 
@@ -139,7 +164,11 @@ main {
     }
 }
 
-@media screen and (max-width:350px) {
+
+@media screen and (max-width:370px) {
+    main{
+        height: 100%;
+    }
     .movie-grid {
         width: 250px;
     }
