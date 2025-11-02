@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../Css/MovieCard.css";
+import Swal from "sweetalert2";
 
 import { useMovieContext } from "../../contexts/MovieContext";
 
@@ -9,8 +10,42 @@ const MovieCard = ({ movie }) => {
     const favorite = isFavorite(movie.id);
 
     function OnFavoriteClick(e) {
-        alert("Movie Added To Favorite")
         e.preventDefault();
+
+        if (favorite) {
+            removeFavorites(movie.id);
+            Swal.fire({
+                title: "Remove!",
+                text: "Remove from Favorite",
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false,
+                width: "280px", // smaller popup
+                toast: true,
+                position: "top-end",
+                customClass: {
+                    popup: "slide-toast"
+                }
+            });
+        } else {
+            // Adding to favorites
+            addToFavorites(movie);
+
+            Swal.fire({
+                title: "Added!",
+                text: "Movie Added To Favorite",
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false,
+                width: "260px",
+                toast: true,
+                position: "top-end",
+                customClass: { popup: "slide-toast" }
+            });
+        }
+
+
+
         if (favorite) removeFavorites(movie.id);
         else addToFavorites(movie);
     }
@@ -23,10 +58,10 @@ const MovieCard = ({ movie }) => {
                     className="card-img-top"
                     alt={movie.title}
                 />
-                    <button className={`btn-one ${favorite ? "active" : ""}`}
-                        onClick={OnFavoriteClick}>
-                        💙
-                    </button>
+                <button className={`btn-one ${favorite ? "active" : ""}`}
+                    onClick={OnFavoriteClick}>
+                    💙
+                </button>
                 <div className="movie-info">
                     <h3>{movie.title}</h3>
                     <p>{movie.release_date?.split("-")[0]}</p>
