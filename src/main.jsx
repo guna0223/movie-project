@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { MovieProvider } from "./contexts/MovieContext.jsx";
+
 import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Favourite from "./pages/Favourite.jsx";
@@ -18,7 +20,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+  <MovieProvider>
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  </MovieProvider>
 );

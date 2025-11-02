@@ -176,4 +176,7 @@ main {
     .card {
         width: 250px;
     }
+    .card-img-top{
+        margin-top: 20px;
+    }
 }
