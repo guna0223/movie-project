@@ -33,7 +33,8 @@
     }
 }
 .favorites{
-    height: 100vh;
+    height: 100;
+
 }
 /* Grid system */
 .movies-grid {
@@ -43,6 +44,9 @@
     padding: 15px;
     width: 100%;
     justify-items: center;
+    .card{
+        padding: 1px 10px;
+    }
 }
 
 /* Movie Card Wrapper */
