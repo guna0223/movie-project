@@ -22,15 +22,10 @@ const MovieCard = ({ movie }) => {
                     className="card-img-top"
                     alt={movie.title}
                 />
-                <div className="card-body">
-                    <Link
-                        to="/"
-                        className={`btn-one ${favorite ? "active" : ""}`}
-                        onClick={OnFavoriteClick}
-                    >
+                    <button className={`btn-one ${favorite ? "active" : ""}`}
+                        onClick={OnFavoriteClick}>
                         💙
-                    </Link>
-                </div>
+                    </button>
                 <div className="movie-info">
                     <h3>{movie.title}</h3>
                     <p>{movie.release_date?.split("-")[0]}</p>

@@ -105,6 +105,8 @@ main {
     right: 20px;
     text-decoration: none;
     display: none;
+    border: none;
+    background: none;
 }
 
 .search-input {
