@@ -42,7 +42,8 @@ const MovieDetails = () => {
                 <p>{movie.overview}</p>
                 <p>📅 Release Date: {movie.release_date}</p>
                 <p>⭐ Rating: {movie.vote_average}</p>
-                <p>🎬 Director: {movie.director}</p>
+
+                <p>🎬 Director: {movie.media_type}</p>
             </div>
         </div>
 
