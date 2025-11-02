@@ -155,17 +155,31 @@ main {
     cursor: pointer;
     width: 100%;
     margin-top: 20px;
-
+/* for fav button */
     .btn-one {
         display: none;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 8px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all .3s ease;
     }
 }
 
 .movie-poster:hover {
+    /* hover for fav btn */
     .btn-one {
         display: block;
         transition: all .35s ease;
         transition: 500ms;
+        transform: scale(1.15);
+        background: rgba(255, 255, 255, 0.35);
     }
 }
 
@@ -205,30 +219,7 @@ main {
 }
 
 /* Favorite Button */
-.btn-one {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 8px 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all .3s ease;
-}
 
-.btn-one:hover {
-    transform: scale(1.15);
-    background: rgba(255, 255, 255, 0.35);
-}
-
-/* .btn-one.active {
-    background: rgba(255, 0, 90, 0.85);
-    border: none;
-    color: #fff;
-} */
 
 /* Rating badge */
 .rating-fill {
