@@ -54,16 +54,17 @@ const MovieCard = ({ movie }) => {
     return (
         <div className="card text-light fav-card">
             <div className="movie-poster fav-card">
+
+                <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    className="card-img-top"
+                    alt={movie.title}
+                />
+                <button className={`btn-one ${favorite ? "active" : ""}`}
+                    onClick={OnFavoriteClick}>
+                    💙
+                </button>
                 <Link to={`/movie/${movie.id}`} className="movie-card">
-                    <img
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                        className="card-img-top"
-                        alt={movie.title}
-                    />
-                    <button className={`btn-one ${favorite ? "active" : ""}`}
-                        onClick={OnFavoriteClick}>
-                        💙
-                    </button>
                     <div className="movie-info">
                         <h3>{movie.title}</h3>
                         <p>{movie.release_date?.split("-")[0]}</p>
