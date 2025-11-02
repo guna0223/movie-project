@@ -153,19 +153,6 @@ main {
 .card-img-top {
     margin-top: 20px;
 }
-
-/* card btn */
-.btn-one {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    text-decoration: none;
-    display: none;
-    border: none;
-    background: none;
-
-}
-
 .search-input {
     margin-top: 20px;
 }

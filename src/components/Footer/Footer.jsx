@@ -13,12 +13,12 @@ const Footer = () => {
 
                 <ul className="footer-links">
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/favourites">Favourites</Link></li>
+                    <li><Link to="/favourite">Favorites</Link></li>
                     <li><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">TMDB API</a></li>
                 </ul>
 
                 <p className="footer-text">
-                    Built with ❤️ using React & TMDB API
+                    Built with  using React & TMDB API
                 </p>
 
                 <p className="footer-copy">
