@@ -3,6 +3,7 @@ import "./components/Css/App.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 import { Outlet, Link } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const App = () => {
                 <Outlet />
             </main>
             <footer>
-
+                <Footer />
             </footer>
         </>
     )
