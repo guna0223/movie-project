@@ -4,7 +4,10 @@
     box-sizing: border-box;
     transition: 500ms;
 }
+a{
 
+    text-decoration: none;
+}
 /* form */
 .search-form {
     display: flex;

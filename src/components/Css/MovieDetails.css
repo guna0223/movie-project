@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.movie-details-container {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0d0d0d, #121212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Card */
+.movie-details {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 600px;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Poster */
+.movie-details-poster {
+    width: 260px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Back button */
+.back-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.back-btn:hover {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+/* Title */
+.details-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    letter-spacing: 0.3px;
+}
+
+/* Rating */
+.details-rating {
+    font-size: 18px;
+    background: rgba(255, 208, 0, 0.2);
+    color: #ffd700;
+    padding: 6px 12px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Date */
+.details-date {
+    color: #b2b2b2;
+    margin-bottom: 15px;
+}
+
+/* Overview */
+.details-overview-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.details-overview {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #dcdcdc;
+    max-width: 550px;
+    margin: auto;
+}

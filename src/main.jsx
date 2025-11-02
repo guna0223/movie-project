@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Favorite from "./pages/Favorite.jsx";
 import "./components/Css/index.css"
+import MovieDetails from "./components/Moviedetails/MovieDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "favourite", element: <Favorite /> },
+      { path: "Movie/:id", element: <MovieDetails /> }
     ],
   },
 ]);
