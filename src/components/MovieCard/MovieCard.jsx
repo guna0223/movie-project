@@ -15,8 +15,8 @@ const MovieCard = ({ movie }) => {
     }
 
     return (
-        <div className="card text-light">
-            <div className="movie-poster">
+        <div className="card text-light fav-card">
+            <div className="movie-poster fav-card">
                 <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     className="card-img-top"

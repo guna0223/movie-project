@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.fav-card {
+    margin: 10px;
+}
+
+main {
+    min-height: 100vh;
+}
+
+/* Desktop (1500px+) */
+@media screen and (min-width:1500px) {
+    .movies-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Laptop/Tablets horizontal (1200px-1499px) */
+@media screen and (max-width:1499px) and (min-width:1024px) {
+    .movies-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Tablet landscape (900px - 1023px) */
+@media screen and (max-width:1023px) and (min-width:768px) {
+    .movies-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet portrait / Large phones (600px - 767px) */
+@media screen and (max-width:767px) and (min-width:600px) {
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Phones (<=599px) */
+@media screen and (max-width:599px) {
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-img-top {
+        margin-top: 10px;
+    }
+}
+
+/* Small phones <=390px (iPhone SE, small androids) */
+@media screen and (max-width:390px) {
+    .movies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+/* Hover only on devices >700px */
+@media screen and (min-width:700px) {
+    .card:hover {
+        transform: scale(1.03);
+        transition: 400ms;
+        box-shadow: rgba(38, 57, 77, 0.4) 0px 10px 20px;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

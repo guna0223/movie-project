@@ -5,7 +5,7 @@ import { MovieProvider } from "./contexts/MovieContext.jsx";
 
 import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
-import Favourite from "./pages/Favourite.jsx";
+import Favorite from "./pages/Favorite.jsx";
 import "./components/Css/index.css"
 
 const router = createBrowserRouter([
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "favourite", element: <Favourite /> },
+      { path: "favourite", element: <Favorite /> },
     ],
   },
 ]);
