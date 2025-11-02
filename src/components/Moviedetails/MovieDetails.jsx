@@ -31,12 +31,12 @@ const MovieDetails = () => {
         <div className="movie-details">
 
             <button className="back-btn" onClick={() => navigate(-1)}>X</button>
-
-            <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-            />
-
+            <div className="movie-img">
+                <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                />
+            </div>
             <div className="info">
                 <h2>{movie.title}</h2>
                 <p>{movie.overview}</p>
