@@ -245,8 +245,17 @@ main {
 }
 
 /* ✅ Mobile Responsive */
-@media (max-width: 700px) {
+
+
+@media screen and (max-width: 900px) {
     .movie-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:750px) {
+    .movie-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 }
