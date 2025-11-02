@@ -1,93 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-.movie-details-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    color: #fff;
-}
-
-/* Card */
 .movie-details {
-    background: radial-gradient(circle, rgb(76, 75, 75) 0%, rgb(185, 185, 189) 90%);
-    backdrop-filter: blur(10px);
-    width: 90%;
-    max-width: 600px;
-    padding: 25px;
-    border-radius: 16px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    max-width: 1100px;
+    /* margin: 40px auto; */
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    color: #fff;
 }
 
 /* Poster */
-.movie-details-poster {
-    width: 260px;
+.movie-details img {
+    width: 320px;
+    height: 480px;
+    object-fit: cover;
     border-radius: 12px;
-    margin-bottom: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Back button */
+/* Text Content */
+.movie-details .info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 700px;
+}
+
+.movie-details h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.movie-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Back Button */
 .back-btn {
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 8px;
+    background:rgb(187, 183, 183);
+    border: none;
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s;
     margin-bottom: 15px;
+    transition: .3s;
+    color: #fff;
 }
 
 .back-btn:hover {
-    background: #e50914;
-    border-color: #e50914;
+    background:gray;
+    transform: translateX(-3px);
 }
 
-/* Title */
-.details-title {
-    font-size: 26px;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    letter-spacing: 0.3px;
-}
+/* Responsive */
+@media(max-width: 768px) {
+    .movie-details {
+        flex-direction: column;
+        text-align: center;
+    }
 
-/* Rating */
-.details-rating {
-    font-size: 18px;
-    background: rgba(255, 208, 0, 0.2);
-    color: #ffd700;
-    padding: 6px 12px;
-    border-radius: 10px;
-    display: inline-block;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-/* Date */
-.details-date {
-    color: #b2b2b2;
-    margin-bottom: 15px;
-}
-
-/* Overview */
-.details-overview-title {
-    font-size: 20px;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.details-overview {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #dcdcdc;
-    max-width: 550px;
-    margin: auto;
+    .movie-details img {
+        width: 250px;
+        height: auto;
+        margin: 0 auto;
+    }
 }
