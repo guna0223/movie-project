@@ -9,6 +9,7 @@ const MovieCard = ({ movie }) => {
     const favorite = isFavorite(movie.id);
 
     function OnFavoriteClick(e) {
+        alert("Movie Added To Favorite")
         e.preventDefault();
         if (favorite) removeFavorites(movie.id);
         else addToFavorites(movie);
