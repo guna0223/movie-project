@@ -1,7 +1,6 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../Css/MovieDetails.css";
-
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -17,24 +16,35 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const res = await fetch(`${BASE_URL}/${id}?api_key=${API_KEY}`);
+        // Movie Details
+        const res = await fetch(`${BASE_URL}/${id}?api_key=${API_KEY}&language=en-US`);
         const data = await res.json();
+
+        if (!data || data.success === false) {
+          console.error("Movie fetch failed:", data);
+          setMovie(null);
+          return;
+        }
+
         setMovie(data);
 
-        const creditsRes = await fetch(`${BASE_URL}/${id}/credits?api_key=${API_KEY}`);
+        // Credits - get director
+        const creditsRes = await fetch(`${BASE_URL}/${id}/credits?api_key=${API_KEY}&language=en-US`);
         const creditsData = await creditsRes.json();
         const directorInfo = creditsData.crew.find((p) => p.job === "Director");
         setDirector(directorInfo ? directorInfo.name : "Not Available");
-        // trailer key
-        const trailerRes = await fetch(`${BASE_URL}/${id}/videos?api_key=${API_KEY}`);
+
+        // Trailer
+        const trailerRes = await fetch(`${BASE_URL}/${id}/videos?api_key=${API_KEY}&language=en-US`);
         const trailerData = await trailerRes.json();
-        const officialTrailer = trailerData.results.find(
+        const officialTrailer = trailerData.results?.find(
           (vid) => vid.type === "Trailer" && vid.site === "YouTube"
         );
         setTrailerKey(officialTrailer ? officialTrailer.key : "");
 
       } catch (error) {
         console.log("Error:", error);
+        setMovie(null);
       }
     };
 
@@ -45,7 +55,9 @@ const MovieDetails = () => {
 
   return (
     <div className="movie-details">
-      <button className="back-btn" onClick={() => navigate(-1)}><i class="bi bi-x-lg"></i></button>
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        <i className="bi bi-x-lg"></i>
+      </button>
 
       <div className="movie-img">
         <img
@@ -72,14 +84,14 @@ const MovieDetails = () => {
         <p>🎬 Director: {director}</p>
 
         {trailerKey && (
-          <Link
+          <a
             className="trailer-btn"
-            to={`https://www.youtube.com/watch?v=${trailerKey}`}
+            href={`https://www.youtube.com/watch?v=${trailerKey}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <p className="youtube-icon"><i class="bi bi-youtube"></i>Watch Trailer</p>
-          </Link>
+            <p className="youtube-icon"><i className="bi bi-youtube"></i> Watch Trailer</p>
+          </a>
         )}
       </div>
     </div>
