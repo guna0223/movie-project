@@ -16,8 +16,8 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        // Movie Details
-        const res = await fetch(`${BASE_URL}/${id}?api_key=${API_KEY}&language=en-`);
+        // Movie details
+        const res = await fetch(`${BASE_URL}/${id}?api_key=${API_KEY}&language=en-US`);
         const data = await res.json();
 
         if (!data || data.success === false) {
@@ -28,7 +28,7 @@ const MovieDetails = () => {
 
         setMovie(data);
 
-        // Credits - get director
+        // Credits -> Director
         const creditsRes = await fetch(`${BASE_URL}/${id}/credits?api_key=${API_KEY}&language=en-US`);
         const creditsData = await creditsRes.json();
         const directorInfo = creditsData.crew.find((p) => p.job === "Director");
@@ -37,10 +37,20 @@ const MovieDetails = () => {
         // Trailer
         const trailerRes = await fetch(`${BASE_URL}/${id}/videos?api_key=${API_KEY}&language=en-US`);
         const trailerData = await trailerRes.json();
-        const officialTrailer = trailerData.results?.find(
+
+        const trailers = trailerData.results?.filter(
           (vid) => vid.type === "Trailer" && vid.site === "YouTube"
         );
-        setTrailerKey(officialTrailer ? officialTrailer.key : "");
+
+        // ✅ Find official trailer first
+        const officialTrailer = trailers?.find((vid) =>
+          vid.name.toLowerCase().includes("official")
+        );
+
+        // ✅ Fallback to first trailer if no official
+        const trailerToShow = officialTrailer || (trailers && trailers[0]);
+
+        setTrailerKey(trailerToShow ? trailerToShow.key : "");
 
       } catch (error) {
         console.log("Error:", error);
@@ -83,7 +93,7 @@ const MovieDetails = () => {
         <p>⭐ Rating: {movie.vote_average}</p>
         <p>🎬 Director: {director}</p>
 
-        {trailerKey && (
+        {trailerKey ? (
           <Link
             className="trailer-btn"
             to={`https://www.youtube.com/watch?v=${trailerKey}`}
@@ -92,6 +102,8 @@ const MovieDetails = () => {
           >
             <p className="youtube-icon"><i className="bi bi-youtube"></i> Watch Trailer</p>
           </Link>
+        ) : (
+          <p className="no-trailer">Trailer not available for this movie <i class="bi bi-emoji-frown-fill"></i></p>
         )}
       </div>
     </div>
