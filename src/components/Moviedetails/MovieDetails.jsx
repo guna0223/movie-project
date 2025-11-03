@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../Css/MovieDetails.css";
 
@@ -17,7 +17,7 @@ const MovieDetails = () => {
     const fetchMovie = async () => {
       try {
         // Movie Details
-        const res = await fetch(`${BASE_URL}/${id}?api_key=${API_KEY}&language=en-US`);
+        const res = await fetch(`${BASE_URL}/${id}?api_key=${API_KEY}&language=en-`);
         const data = await res.json();
 
         if (!data || data.success === false) {
@@ -68,14 +68,14 @@ const MovieDetails = () => {
 
       <div className="info">
         <h2>
-          <a
+          <Link
             className="tmdb-link"
-            href={`https://www.themoviedb.org/movie/${movie.id}`}
+            to={`https://www.themoviedb.org/movie/${movie.id}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             {movie.title}
-          </a>
+          </Link>
         </h2>
 
         <p>{movie.overview}</p>
@@ -84,14 +84,14 @@ const MovieDetails = () => {
         <p>🎬 Director: {director}</p>
 
         {trailerKey && (
-          <a
+          <Link
             className="trailer-btn"
-            href={`https://www.youtube.com/watch?v=${trailerKey}`}
+            to={`https://www.youtube.com/watch?v=${trailerKey}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             <p className="youtube-icon"><i className="bi bi-youtube"></i> Watch Trailer</p>
-          </a>
+          </Link>
         )}
       </div>
     </div>
