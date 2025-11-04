@@ -78,14 +78,7 @@ const MovieDetails = () => {
 
       <div className="info">
         <h2>
-          <Link
-            className="tmdb-link"
-            to={`https://www.themoviedb.org/movie/${movie.id}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
             {movie.title}
-          </Link>
         </h2>
 
         <p>{movie.overview}</p>

@@ -7,7 +7,7 @@
 }
 
 .footer-container {
-      font-family: "Playfair Display", serif;
+    font-family: "Playfair Display", serif;
     max-width: 900px;
     margin: auto;
 }
@@ -44,7 +44,7 @@
 }
 
 .footer-links a:hover {
-     text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Text */
