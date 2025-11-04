@@ -20,7 +20,11 @@
     margin-top: 30px;
     background: linear-gradient(to bottom, transparent 50%, rgba(56, 56, 56, 0.9) 100%);
 }
-
+.details-img:hover{
+    cursor: pointer;
+    transform: 500ms;
+    transform: translateY(1.50px);
+}
 /* mobile view */
 
 .providers {
