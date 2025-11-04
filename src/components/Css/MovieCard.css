@@ -49,6 +49,7 @@ a {
 }
 
 .search-button:hover {
+    color: black;
     border-radius: 2px;
     background-color: #bab8b8;
     box-shadow: 0 0 8px rgba(187, 179, 180, 0.5);
