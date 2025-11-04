@@ -18,6 +18,34 @@
 .movie-img {
     margin: auto;
     margin-top: 30px;
+    background: linear-gradient(to bottom, transparent 50%, rgba(56, 56, 56, 0.9) 100%);
+}
+/* mobile view */
+
+.providers {
+    position: relative;
+
+    h3 {
+        display: none;
+        font-size: 20px;
+    }
+
+    .provider-list {
+        display: flex;
+        gap: 10px;
+        margin: 20px;
+
+        img {
+            height: 38px;
+            width: 38px;
+        }
+
+        .ott-subtitle {
+            font-size: 18px;
+            font-weight: bolder;
+
+        }
+    }
 }
 
 /* Poster */
@@ -37,9 +65,11 @@
     gap: 12px;
     max-width: 700px;
 }
-.bi-emoji-frown-fill{
+
+.bi-emoji-frown-fill {
     color: rgb(255, 255, 0);
 }
+
 .movie-details h2 {
     font-size: 2.4rem;
     font-weight: 700;
@@ -96,12 +126,8 @@
 }
 
 .youtube-icon {
-    margin: auto;
-
-    i {
-        margin-right: 10px;
-        color: red;
-    }
+    margin-right: 10px;
+    color: red;
 }
 
 .trailer-btn:hover {
