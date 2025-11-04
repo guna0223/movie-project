@@ -77,7 +77,7 @@ const MoviDetails = () => {
       </button>
 
       <div className="movie-img">
-        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="details-img"/>
+        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="details-img" />
 
         <div className="providers">
           <h3>Available on:</h3>
@@ -91,6 +91,7 @@ const MoviDetails = () => {
               <p className="ott-subtitle">Now Streaming</p>
             </div>
           ) : (
+
             <p>Not available on OTT</p>
           )}
         </div>

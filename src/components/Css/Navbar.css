@@ -9,6 +9,7 @@
 
 
 .navbar {
+    
     display: flex;
     justify-content: space-around;
     background: linear-gradient(rgb(39, 38, 38), rgb(96, 96, 97));

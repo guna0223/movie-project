@@ -20,11 +20,12 @@
     margin-top: 30px;
     background: linear-gradient(to bottom, transparent 50%, rgba(56, 56, 56, 0.9) 100%);
 }
+
 /* mobile view */
 
 .providers {
     position: relative;
-
+    margin-bottom: 50px;
     h3 {
         display: none;
         font-size: 20px;
@@ -41,9 +42,10 @@
         }
 
         .ott-subtitle {
+            position: absolute;
             font-size: 18px;
             font-weight: bolder;
-
+            bottom: -50px;
         }
     }
 }

@@ -155,7 +155,9 @@ main {
     cursor: pointer;
     width: 100%;
     margin-top: 20px;
-/* for fav button */
+    background: linear-gradient(to bottom, transparent 50%, rgba(56, 56, 56, 0.9) 100%);
+
+    /* for fav button */
     .btn-one {
         display: none;
         position: absolute;
@@ -173,6 +175,7 @@ main {
 }
 
 .movie-poster:hover {
+
     /* hover for fav btn */
     .btn-one {
         display: block;
@@ -197,7 +200,6 @@ main {
     filter: brightness(1);
     height: 350px;
 }
-
 
 /* movie info */
 .movie-info {
@@ -256,7 +258,7 @@ main {
         grid-template-columns: 1fr;
         max-width: 250px;
         margin: auto;
-  
+
     }
 }
 
