@@ -136,6 +136,7 @@ main {
     box-shadow: none !important;
     padding: 0;
     margin: 0;
+    height: 450px;
 }
 
 /* Movie Poster Wrapper */
@@ -156,9 +157,9 @@ main {
 /* Poster Image */
 .movie-poster img {
     width: 100%;
-
     transition: .3s ease;
     margin-bottom: 20px;
+    height: 300px !important;
     filter: brightness(90%);
 }
 
@@ -184,10 +185,14 @@ main {
     transition: .3s;
 }
 
-.movie-poster:hover .btn-one {
+.movie-poster:hover {
     display: block;
-    transform: scale(1.14);
-    background: rgba(255, 255, 255, 0.35);
+    background: linear-gradient(top,rgb(167, 165, 165), rgb(48, 48, 49));
+
+    .btn-one {
+        display: block;
+        transform: scale(1.02);
+    }
 }
 
 .btn-one.active {
@@ -199,7 +204,7 @@ main {
 .movie-info {
     padding: 10px 4px;
     color: white;
-    text-align: left;
+    text-align: center;
 }
 
 /* Movie Title */
@@ -218,6 +223,7 @@ main {
 
 /* ⭐ Rating */
 .rating-fill {
+    position: absolute;
     background: #ffd700;
     color: #000;
     padding: 3px 6px;
@@ -226,6 +232,8 @@ main {
     font-size: 12px;
     display: inline-block;
     margin-bottom: 4px;
+    top: 10px;
+    left: 10px;
 }
 
 /* Overview text — 2 line clamp */
