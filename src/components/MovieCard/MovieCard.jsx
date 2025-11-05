@@ -62,7 +62,7 @@ const MovieCard = ({ movie }) => {
                 />
                 <button className={`btn-one ${favorite ? "active" : ""}`}
                     onClick={OnFavoriteClick}>
-                    💙
+                    <i class="bi bi-heart-fill"></i>
                 </button>
                 <Link to={`/movie/${movie.id}`} className="movie-card">
                     <div className="movie-info">

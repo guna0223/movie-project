@@ -173,10 +173,10 @@ main {
 .btn-one {
     position: absolute;
     top: 10px;
+    color: white;
     right: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background:none !important; 
+    border: none !important;
     padding: 8px;
     border-radius: 50%;
     font-size: 1.1rem;
@@ -187,8 +187,6 @@ main {
 
 .movie-poster:hover {
     display: block;
-    background: linear-gradient(top,rgb(167, 165, 165), rgb(48, 48, 49));
-
     .btn-one {
         display: block;
         transform: scale(1.02);
@@ -196,8 +194,8 @@ main {
 }
 
 .btn-one.active {
-    background: #009dff;
-    color: white;
+    /* background: #009dff; */
+    color:red;
 }
 
 /* Info below poster */
