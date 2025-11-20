@@ -21,7 +21,7 @@ const MovieCard = ({ movie }) => {
                 icon: "success",
                 timer: 1500,
                 showConfirmButton: false,
-                width: "280px", // smaller popup
+                width: "280px", 
                 toast: true,
                 position: "top-end",
                 customClass: {
@@ -41,7 +41,9 @@ const MovieCard = ({ movie }) => {
                 width: "260px",
                 toast: true,
                 position: "top-end",
-                customClass: { popup: "slide-toast" }
+                customClass: { 
+                    popup: "slide-toast" 
+                }
             });
         }
 

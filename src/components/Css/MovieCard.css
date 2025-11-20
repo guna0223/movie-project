@@ -1,38 +1,37 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 500ms;
 }
 
 a {
     text-decoration: none;
 }
 
-/* form */
+/* SEARCH FORM */
 .search-form {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin: 20px auto;
+    margin: 25px auto;
     padding: 10px;
 }
 
 .search-input {
     width: 280px;
-    padding: 10px 14px;
+    padding: 12px 16px;
     font-size: 16px;
     border-radius: 10px;
-    border-style: none;
+    border: none;
     outline: none;
-    transition: 0.3s ease;
     font-family: "Playfair Display", serif;
-    margin-top: 20px;
+    transition: 0.3s;
 }
 
 .search-input:focus {
-    box-shadow: 0 0 8px rgba(233, 229, 229, 0.5);
+    box-shadow: 0 0 8px rgba(200, 200, 200, 0.6);
 }
 
 .search-button {
@@ -40,34 +39,18 @@ a {
     font-size: 16px;
     border-radius: 10px;
     border: none;
-    background-color: gray;
+    background: gray;
     color: white;
     cursor: pointer;
-    margin-top: 20px;
+    transition: 0.2s;
 }
 
 .search-button:hover {
-    background-color: #bab8b8;
+    background: #bab8b8;
     color: black;
 }
 
-/* Toast animation */
-.slide-toast {
-    animation: slideInRight 0.4s ease-out;
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(120%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
+/* TOAST */
 .toast-box {
     position: fixed;
     top: 20px;
@@ -82,212 +65,165 @@ a {
 }
 
 @keyframes slideRight {
-    from {
-        right: -200px;
-        opacity: 0;
-    }
-
-    to {
-        right: 20px;
-        opacity: 1;
-    }
+    from { right: -200px; opacity: 0; }
+    to { right: 20px; opacity: 1; }
 }
 
 @keyframes fadeOut {
-    from {
-        right: 20px;
-        opacity: 1;
-    }
-
-    to {
-        right: -200px;
-        opacity: 0;
-    }
+    from { right: 20px; opacity: 1; }
+    to { right: -200px; opacity: 0; }
 }
 
-.home {
-    margin-top: 90px;
-}
-
+/* MAIN AREA */
 main {
     margin-top: 90px;
-    background: radial-gradient(circle, rgb(76, 75, 75) 0%, rgb(185, 185, 189) 90%);
-    height: 100%;
+    background: radial-gradient(circle, #4c4b4b 0%, #b9b9bd 90%);
+    min-height: 100vh;
 }
 
-.container-fluid {
-    margin-top: 20px;
-}
-
-/* Grid Layout */
+/* GRID */
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    padding: 15px;
 }
 
-/* Remove bootstrap card look */
+/* MOVIE CARD */
 .card.fav-card {
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    box-shadow: none;
     padding: 0;
-    margin: 0;
-    height: 450px;
 }
 
-/* Movie Poster Wrapper */
+/* POSTER WRAPPER */
 .movie-poster {
     position: relative;
-    width: 100%;
+    overflow: hidden;    
     border-radius: 14px;
-    overflow: hidden;
     background: #0d0d0d;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-.movie-poster:hover {
-    background: linear-gradient(to bottom, transparent 50%, rgba(56, 56, 56, 0.9) 100%);
-}
-
-/* Poster Image */
+/* POSTER IMAGE */
 .movie-poster img {
     width: 100%;
-    transition: .3s ease;
-    margin-bottom: 20px;
-    height: 300px !important;
-    filter: brightness(90%);
+    height: 330px !important;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: 0.3s ease;
+    filter: brightness(85%);
 }
 
-/* Hover effect */
 .movie-poster:hover img {
-    transform: translatez(10px);
     filter: brightness(100%);
+    transform: scale(1.05);
 }
 
-/* 💙 Fav button */
+/* FAVORITE BUTTON */
 .btn-one {
     position: absolute;
     top: 10px;
-    color: white;
     right: 10px;
-    background:none !important; 
-    border: none !important;
+    color: white;
+    background: transparent;
+    border: none;
     padding: 8px;
-    border-radius: 50%;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     cursor: pointer;
-    display: none;
-    transition: .3s;
+    opacity: 0;
+    transition: 0.3s;
 }
 
-.movie-poster:hover {
-    display: block;
-    .btn-one {
-        display: block;
-        transform: scale(1.02);
-    }
+.movie-poster:hover .btn-one {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .btn-one.active {
-    /* background: #009dff; */
-    color:red;
+    color: red;
 }
 
-/* Info below poster */
-.movie-info {
-    padding: 10px 4px;
-    color: white;
-    text-align: center;
-}
-
-/* Movie Title */
-.movie-info h3 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
-/* Year text */
-.movie-info p {
-    font-size: 13px;
-    opacity: 0.85;
-    margin-bottom: 4px;
-}
-
-/* ⭐ Rating */
+/* RATING */
 .rating-fill {
     position: absolute;
+    top: 10px;
+    left: 10px;
     background: #ffd700;
     color: #000;
     padding: 3px 6px;
     border-radius: 6px;
-    font-weight: bold;
     font-size: 12px;
-    display: inline-block;
-    margin-bottom: 4px;
-    top: 10px;
-    left: 10px;
+    font-weight: bold;
 }
 
-/* Overview text — 2 line clamp */
+/* INFO */
+.movie-info {
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.movie-info h3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.movie-info p {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+/* Overview 2-line clamp */
 .movie-overview {
     font-size: 13px;
     opacity: 0.8;
     line-height: 1.3em;
-    height: 2.6em;
+    max-height: 2.6em;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 900px) {
-    .movie-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 700px) {
-    .movie-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 450px) {
-    .movie-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-
-/* ✅ Mobile Responsive (below 500px) */
+/* 📱 MOBILE FIX – FULLY OPTIMIZED */
 @media (max-width: 500px) {
-    .movie-card {
-        width: 100% !important;
-        /* full width */
-        margin: 0 0 15px 0;
-        /* spacing below */
+
+    .movie-grid {
+        padding: 8px;
+        gap: 12px;
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
     }
 
     .movie-poster img {
-        height: 320px !important;
-        /* resize poster height for mobile */
+        height: 220px !important;    /* FIXED: no more stretched images */
+        object-fit: cover;
+    }
+
+    .movie-info {
+        padding: 6px 4px;
     }
 
     .movie-info h3 {
-        font-size: 1.1rem;
+        font-size: 13px;
     }
 
     .movie-info p {
-        font-size: .85rem;
+        font-size: 12px;
+    }
+
+    .movie-overview {
+        font-size: 12px;
+        max-height: 2.4em;
+    }
+
+    .btn-one {
+        font-size: 1.1rem;
+        padding: 6px;
     }
 
     .rating-fill {
-        font-size: .75rem;
-        padding: 3px 6px;
+        font-size: 10px;
+        padding: 2px 4px;
     }
 }
