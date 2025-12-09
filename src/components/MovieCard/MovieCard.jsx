@@ -21,15 +21,12 @@ const MovieCard = ({ movie }) => {
                 icon: "success",
                 timer: 1500,
                 showConfirmButton: false,
-                width: "280px", 
+                width: "280px",
                 toast: true,
                 position: "top-end",
-                customClass: {
-                    popup: "slide-toast"
-                }
+                customClass: { popup: "slide-toast" }
             });
         } else {
-            // Adding to favorites
             addToFavorites(movie);
 
             Swal.fire({
@@ -41,13 +38,9 @@ const MovieCard = ({ movie }) => {
                 width: "260px",
                 toast: true,
                 position: "top-end",
-                customClass: { 
-                    popup: "slide-toast" 
-                }
+                customClass: { popup: "slide-toast" }
             });
         }
-
-
 
         if (favorite) removeFavorites(movie.id);
         else addToFavorites(movie);
@@ -61,10 +54,14 @@ const MovieCard = ({ movie }) => {
                     className="card-img-top"
                     alt={movie.title}
                 />
-                <button className={`btn-one ${favorite ? "active" : ""}`}
-                    onClick={OnFavoriteClick}>
-                    <i class="bi bi-heart-fill"></i>
+
+                <button
+                    className={`btn-one ${favorite ? "active" : ""}`}
+                    onClick={OnFavoriteClick}
+                >
+                    <i className="bi bi-heart-fill"></i>
                 </button>
+
                 <Link to={`/movie/${movie.id}`} className="movie-card">
                     <div className="movie-info">
                         <h3>{movie.title}</h3>
@@ -78,10 +75,8 @@ const MovieCard = ({ movie }) => {
                     </div>
                 </Link>
             </div>
-        </div >
+        </div>
     );
 };
 
 export default MovieCard;
-
-
