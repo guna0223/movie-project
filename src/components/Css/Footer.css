@@ -1,84 +1,76 @@
-/* ==================================================
-   FOOTER (NETFLIX CENTERED)
-================================================== */
-.footer {
-    background: #141414;
-    padding: 35px 16px;
-    color: #b3b3b3;
-    text-align: center;
-    border-top: 1px solid #222;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Container */
+/* FOOTER MAIN */
+.footer {
+    background: #0d0d0d;
+    color: #ffffff;
+    padding: 45px 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.08);
+    margin-top: 80px;
+}
+
+/* CONTENT CONTAINER */
 .footer-container {
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: "Playfair Display", serif;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
 }
 
 /* LOGO */
 .footer-logo {
-    font-size: 26px;
-    font-weight: 800;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
-    color: #e5e5e5;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #e50914;
 }
 
 .footer-logo span {
-    color: #e50914;
+    color: #fff;
 }
 
 /* LINKS */
 .footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 14px 28px;
     list-style: none;
     padding: 0;
-    margin-bottom: 18px;
+    margin: 0 0 15px;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
 }
 
-.footer-links a {
-    text-decoration: none;
-    color: #808080;
+.footer-links li a {
+    color: #bbb;
     font-size: 15px;
-    transition: 0.25s ease;
+    text-decoration: none;
+    transition: .3s ease;
 }
 
-.footer-links a:hover {
+.footer-links li a:hover {
     color: #e50914;
-    text-decoration: underline;
 }
 
 /* TEXT */
 .footer-text {
     font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 6px;
+    color: #bbb;
+    margin: 8px 0 2px;
 }
 
+/* COPYRIGHT */
 .footer-copy {
     font-size: 13px;
-    opacity: 0.5;
+    color: #888;
+    margin-top: 10px;
 }
 
-/* ==================================================
-   MOBILE RESPONSIVE
-================================================== */
-@media (max-width: 520px) {
-
-    .footer-logo {
-        font-size: 22px;
-    }
-
+/* RESPONSIVE */
+@media (max-width: 600px) {
     .footer-links {
         flex-direction: column;
-        gap: 12px;
-    }
-
-    .footer-links a {
-        font-size: 15px;
+        gap: 10px;
     }
 }
