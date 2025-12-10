@@ -21,6 +21,13 @@
     z-index: 999;
 }
 
+.logo {
+    img {
+        height:60px;
+        width: 100px;
+    }
+}
+
 /* BRAND */
 .navbar-title h1 {
     color: #e50914;
@@ -59,6 +66,7 @@
 
 .nav-link:hover {
     color: #e50914;
+    text-decoration: underline;
 }
 
 /* TOGGLE BUTTON (MOBILE) */

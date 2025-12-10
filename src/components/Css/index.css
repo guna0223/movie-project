@@ -85,16 +85,23 @@ body {
 .search-button {
     border: none;
     font-size: 18px;
+    padding: 20px 50px;
     font-weight: 600;
     cursor: pointer;
-    color: #fff;
+    color: white;
     border-radius: 0 40px 40px 0;
     background: linear-gradient(90deg, #f50b0b, #d8d5d4);
     transition: 0.3s ease;
+    transition: all 1s ease-in-out;
+    filter: brightness(80%);
 }
 
 .search-button:hover {
-    filter: brightness(1.1);
+    filter: brightness(100%);
+    background: linear-gradient(90deg, #d8d5d4, #f50b0b);
+    color: white;
+    transition: all 1s ease-in-out;
+
 }
 
 /* RESPONSIVE */
@@ -112,11 +119,6 @@ body {
     .search-input {
         font-size: 16px;
         padding: 14px 18px;
-    }
-
-    .search-button {
-        padding: 0 24px;
-        font-size: 16px;
     }
 
     .content-img {
@@ -150,7 +152,8 @@ body {
     }
 
     .search-button {
-        padding: 0 24px;
+
+        padding: 20px 24px;
         font-size: 16px;
     }
 }
