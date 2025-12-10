@@ -19,7 +19,7 @@ const Navbar = () => {
             {/* BRAND */}
             <div className="navbar-title">
                 <Link to="/" className="nav-link">
-                    <h1>Movie Hub</h1>
+                    <h1>METFLIX</h1>
                 </Link>
             </div>
 

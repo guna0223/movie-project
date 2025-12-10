@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer-container">
 
                 <div className="footer-logo">
-                    🎬 <span>MovieHub</span>
+                    🎬 <span>METFLIX</span>
                 </div>
 
                 <ul className="footer-links">
