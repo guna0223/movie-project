@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import MovieDetails from "./components/Moviedetails/MovieDetails";
+import TvDetails from "./components/TvShowsDetails/TvShowsDetails";
+
 
 import { Outlet, Link } from "react-router-dom";
 

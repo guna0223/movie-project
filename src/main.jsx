@@ -9,6 +9,9 @@ import Home from "./pages/Home.jsx";
 import Favorite from "./pages/Favorite.jsx";
 import "./components/Css/index.css"
 import MovieDetails from "./components/Moviedetails/MovieDetails.jsx";
+import TvShows from "./pages/TvShows";
+import TvDetails from "./components/TvShowsDetails/TvShowsDetails.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -18,7 +21,9 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "favourite", element: <Favorite /> },
       { path: "Movie/:id", element: <MovieDetails /> },
-      { path: "search/:query", element: <Home /> }
+      { path: "tv/:id", element: <TvDetails /> },
+      { path: "search/:query", element: <Home /> },
+      { path: "TvShows", element: <TvShows /> }
     ],
   },
 ]);

@@ -53,6 +53,16 @@ const Navbar = () => {
                             Favorite
                         </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link
+                            to="/tvshows"
+                            className="nav-link"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            TV Shows
+                        </Link>
+                    </li>
+
                 </ul>
             </div>
 
