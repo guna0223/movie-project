@@ -1,58 +1,110 @@
-/* MAIN CONTAINER */
+/* ------------------------------------------------------
+   GLOBAL RESET
+------------------------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------
+   PAGE CONTAINER
+   - Full page height
+   - Dark Netflix-like background
+------------------------------------------------------ */
 .detaild-container {
     padding: 110px 50px;
     min-height: 100vh;
     background: #141414;
-    color: #fff;
+    color: #ffffff;
 
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 40px;
-    align-items: flex-start;
-    justify-content: center;
     position: relative;
 }
 
-/* BACK BUTTON */
+/* ------------------------------------------------------
+   BACKGROUND SECTION BOX
+   - Contains poster + details
+   - Has backdrop image behind content
+------------------------------------------------------ */
+.detaild-container>div {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.detaild-container>div::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+}
+
+/* PUT CONTENT ABOVE OVERLAY */
+.detaild-container>div>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* ------------------------------------------------------
+   BACK BUTTON
+------------------------------------------------------ */
 .back-btn {
     position: absolute;
-    top: 90px;
-    left: 30px;
+    top: 20px;
+    left: 4px;
     font-size: 22px;
+    width: 50px;
+    height: 50px;
+
+    color: white;
+    text-decoration: none;
     padding: 6px 12px;
     border-radius: 6px;
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.15);
-    transition: 0.3s;
+
+    background: rgba(255, 255, 255, 0.15);
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back-btn:hover {
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 
-/* POSTER */
-.details-content {
-    width: 350px;
-    flex-shrink: 0;
-}
-
+/* ------------------------------------------------------
+   POSTER IMAGE
+------------------------------------------------------ */
 .details-content img {
-    width: 100%;
+    width: 350px;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* DETAILS SIDE */
+/* ------------------------------------------------------
+   DETAILS TEXT (RIGHT SIDE)
+------------------------------------------------------ */
 .detaiols-text {
-    flex: 1;
     max-width: 600px;
 }
 
 .detaiols-text h1 {
     font-size: 38px;
-    margin-bottom: 15px;
     font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .detaiols-text p {
@@ -61,29 +113,33 @@
     line-height: 1.6;
 }
 
-/* TRAILER BUTTON */
+/* ------------------------------------------------------
+   TRAILER BUTTON
+------------------------------------------------------ */
 .trailer-btn {
     display: inline-block;
     margin-bottom: 20px;
     padding: 10px 18px;
+
     background: crimson;
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
     font-size: 18px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .trailer-btn:hover {
     background: #ff4c4c;
 }
 
-/* SECTIONS */
+/* ------------------------------------------------------
+   CONTENT SECTIONS (Cast / Episodes / Similar)
+------------------------------------------------------ */
 .cast-section,
 .episodes-section,
 .siimilar-show {
     width: 100%;
-    margin-top: 20px;
 }
 
 .cast-section h2,
@@ -91,22 +147,25 @@
 .siimilar-show h2 {
     margin-bottom: 15px;
     font-size: 26px;
+    font-weight: 600;
 }
 
-/* GRID */
+/* ------------------------------------------------------
+   GRID LAYOUT FOR CAST & SIMILAR SHOWS
+------------------------------------------------------ */
 .cast-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 15px;
 }
 
-/* CARDS */
+/* GRID ITEM (ACTOR/SHOW CARD) */
 .cast-card {
     background: #1f1f1f;
-    border-radius: 10px;
     padding: 10px;
+    border-radius: 10px;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.3s ease;
     cursor: pointer;
 }
 
@@ -126,7 +185,9 @@
     font-size: 14px;
 }
 
-/* EPISODES */
+/* ------------------------------------------------------
+   EPISODES ACCORDION
+------------------------------------------------------ */
 .episodes details {
     background: #1f1f1f;
     margin: 8px 0;
@@ -139,17 +200,29 @@
     cursor: pointer;
 }
 
-/* MOBILE */
+/* ------------------------------------------------------
+   RESPONSIVE DESIGN
+------------------------------------------------------ */
 @media (max-width: 900px) {
-    .detaild-container {
+
+    /* STACK POSTER + DETAILS VERTICALLY */
+    .detaild-container>div {
         flex-direction: column;
-        padding: 100px 20px;
         text-align: center;
+        padding: 20px;
     }
 
-    .details-content {
-        width: 70%;
+    /* SCALE POSTER FOR MOBILE */
+    .details-content img {
+        width: 80%;
+        max-width: 320px;
         margin: 0 auto;
+    }
+
+    /* BIGGER TOUCH AREA ON MOBILE */
+    .trailer-btn {
+        font-size: 16px;
+        padding: 8px 14px;
     }
 
     .cast-card img {

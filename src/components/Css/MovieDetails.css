@@ -9,7 +9,7 @@
     gap: 40px;
     padding: 120px 60px 60px;
     color: #fff;
-
+    margin-top: 76px;
     background-image: var(--bg-img);
     background-size: cover;
     background-position: center;
@@ -232,11 +232,11 @@
    BACK / CLOSE BUTTON
 =========================*/
 
-.back-btn {
+.movie-back-btn {
     position: absolute;
-    top: 90px;
-    right: 40px;
-
+    top: 0;
+    right: 50px;
+    margin-left: 100px;
     background: transparent;
     border: none;
     color: #fff;
@@ -245,7 +245,7 @@
     transition: 0.3s ease;
 }
 
-.back-btn:hover {
+.movie-back-btn:hover {
     color: #e50914;
     transform: scale(1.1);
 }

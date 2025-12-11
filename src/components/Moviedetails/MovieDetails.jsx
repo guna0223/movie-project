@@ -76,7 +76,7 @@ const MovieDetails = () => {
       >
 
         {/* BACK BUTTON */}
-        <button className="back-btn" onClick={() => navigate(-1)}>
+        <button className="movie-back-btn" onClick={() => navigate(-1)}>
           <i className="bi bi-x-lg"></i>
         </button>
 
