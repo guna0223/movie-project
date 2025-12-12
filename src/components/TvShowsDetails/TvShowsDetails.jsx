@@ -65,9 +65,6 @@ const TvDetails = () => {
                         : "none"
                 }}>
 
-
-
-
                     {/* BACK BUTTON */}
                     <Link to="/TvShows" className="back-btn">X</Link>
 

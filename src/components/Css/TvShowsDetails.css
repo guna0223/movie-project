@@ -188,11 +188,17 @@
 /* ------------------------------------------------------
    EPISODES ACCORDION
 ------------------------------------------------------ */
+.episodes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .episodes details {
     background: #1f1f1f;
     margin: 8px 0;
     padding: 10px;
     border-radius: 8px;
+    width: fit-content;
 }
 
 .episodes summary {
@@ -203,6 +209,8 @@
 /* ------------------------------------------------------
    RESPONSIVE DESIGN
 ------------------------------------------------------ */
+
+
 @media (max-width: 900px) {
 
     /* STACK POSTER + DETAILS VERTICALLY */

@@ -32,8 +32,8 @@ const TvShows = () => {
                                 }
                                     alt={show.name}
                                 />
-                                <p>{show.name}</p>
                             </Link>
+                            <p className="tV-show-name">{show.name}</p>
                         </div>
                     ))}
                 </div>
