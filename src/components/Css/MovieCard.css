@@ -154,5 +154,37 @@
     .movies-grid {
         grid-template-columns: repeat(1, 1fr);
         justify-items: center;
+        align-items: center;
+        margin: 0;
+        background-color: red;
+    }
+}
+@media (max-width: 429px) {
+    .search-form{
+        display:flex !important;
+    }
+    .search-input{
+        
+        width: 200px;
+    }
+    .search-button{
+        width: 100px;
+    }
+    .movie-card{
+        margin: auto;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .search-input{        
+        width: 100px;
+    }
+    .search-button{
+        width: 100px;
+    }
+    .movie-card{
+        margin: auto;
+        margin-top: 10px;
     }
 }
