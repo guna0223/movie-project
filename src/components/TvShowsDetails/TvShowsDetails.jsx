@@ -84,17 +84,6 @@ const TvDetails = () => {
                     <div className="detaiols-text">
                         <h1>{show.name}</h1>
 
-                        {trailer && (
-                            <a
-                                className="trailer-btn"
-                                href={`https://www.youtube.com/watch?v=${trailer.key}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                🎬 Watch Trailer
-                            </a>
-                        )}
-
                         <p><strong>Overview:</strong> {show.overview}</p>
                         <p><strong>Rating:</strong> ⭐ {show.vote_average}</p>
                         <p><strong>Seasons:</strong> {show.number_of_seasons}</p>
@@ -105,7 +94,18 @@ const TvDetails = () => {
                         {providers?.flatrate && (
                             <p><strong>Watch on:</strong> {providers.flatrate.map(p => p.provider_name).join(", ")}</p>
                         )}
+                        {trailer && (
+                            <a
+                                className="trailer-btn"
+                                href={`https://www.youtube.com/watch?v=${trailer.key}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <i class="bi bi-youtube"></i> Watch Trailer
+                            </a>
+                        )}
                     </div>
+
                 </div>
                 {/* CAST */}
                 <section className="cast-section">
