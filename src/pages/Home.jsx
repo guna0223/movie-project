@@ -2,7 +2,7 @@ import MovieCard from "../components/MovieCard/MovieCard";
 import { useState, useEffect } from "react";
 import { searchMovies, getPopularMovie } from "../services/api";
 import "../components/Css/index.css";
-import bgImg from "../assets/images/bg-img/home-bg-img.jpg";
+import bgImg from "../assets/images/bg-img/bg-movie-app.jpeg";
 
 
 const Home = () => {
