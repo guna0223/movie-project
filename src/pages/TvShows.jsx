@@ -1,44 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import MovieCard from "../components/MovieCard/MovieCard";
 import "../components/Css/TvShows.css";
-
 
 const API_KEY = "0a29d0b18a015f5b930e495750ce3de4";
 
 const TvShows = () => {
     const [shows, setShows] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}`)
             .then(res => res.json())
             .then(data => {
-                setShows(data.results)
+                setShows(data.results || []);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error(err);
+                setError("Failed to load TV shows");
+                setLoading(false);
             });
     }, []);
 
-    return (
-        <>
-            <div className="movie-container">
-                <h1 className="page-title">TV Shows</h1>
+    if (loading) return <div className="loading">Loading...</div>;
+    if (error) return <div className="error_message">{error}</div>;
 
-                <div className="gird">
-                    {shows.map(show => (
-                        <div key={show.id} className="card">
-                            <Link to={`/tv/${show.id}`}>
-                                <img src={
-                                    show.poster_path
-                                        ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
-                                        : "/placeholder.png"
-                                }
-                                    alt={show.name}
-                                />
-                            </Link>
-                            <p className="tV-show-name">{show.name}</p>
-                        </div>
-                    ))}
+    return (
+        <div className="tvshows-page">
+            <div className="tvshows-header">
+                <h1 className="page-title">TV Shows</h1>
+            </div>
+
+            <div className="tvshows-content">
+                <div className="container-fluid">
+                    <div className="movie-grid">
+                        {shows.length > 0 ? (
+                            shows.map(show => (
+                                <MovieCard key={show.id} movie={show} isTvShow={true} />
+                            ))
+                        ) : (
+                            <p className="no-results">No TV shows found</p>
+                        )}
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
