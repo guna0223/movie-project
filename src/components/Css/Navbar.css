@@ -126,7 +126,7 @@
 /* ---------------- MOBILE ---------------- */
 @media (max-width: 992px) {
     .navbar-search-form {
-        display: none;
+        display: block;
     }
 }
 
