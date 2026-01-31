@@ -1,76 +1,101 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* FOOTER MAIN */
 .footer {
-    background: #0d0d0d;
-    color: #ffffff;
-    padding: 45px 20px;
-    border-top: 2px solid rgba(255, 255, 255, 0.08);
-    margin-top: 80px;
+    background: #141414;
+    color: #cbd5f5;
+    padding: 3rem 1.5rem 1.5rem;
 }
 
-/* CONTENT CONTAINER */
 .footer-container {
-    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
     margin: auto;
-    text-align: center;
 }
 
-/* LOGO */
 .footer-logo {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #e50914;
-}
-
-.footer-logo span {
     color: #fff;
+    font-size: 1.8rem;
 }
 
-/* LINKS */
-.footer-links {
+.footer-tagline {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-nav h4,
+.footer-tech h4 {
+    color: #fff;
+    margin-bottom: 0.6rem;
+}
+
+.footer-nav ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 15px;
-    display: flex;
-    justify-content: center;
-    gap: 22px;
 }
 
-.footer-links li a {
-    color: #bbb;
-    font-size: 15px;
+.footer-nav li {
+    margin-bottom: 0.4rem;
+}
+
+.footer-nav a {
+    color: #cbd5f5;
     text-decoration: none;
-    transition: .3s ease;
 }
 
-.footer-links li a:hover {
-    color: #e50914;
+.footer-nav a:hover {
+    color: #f97316;
 }
 
-/* TEXT */
-.footer-text {
-    font-size: 14px;
-    color: #bbb;
-    margin: 8px 0 2px;
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-/* COPYRIGHT */
-.footer-copy {
-    font-size: 13px;
-    color: #888;
-    margin-top: 10px;
-}
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-    .footer-links {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+
+    .footer-bottom {
         flex-direction: column;
-        gap: 10px;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
     }
 }
