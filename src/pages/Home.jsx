@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getPopularMovie, getMoviesByGenre, searchMovies } from "../services/api";
 import "../components/Css/index.css";
-import bgImg from "../assets/images/bg-img/bg-movie-app.jpeg";
+// import bgImg from "../assets/images/bg-img/bg-movie-app.jpeg";
+import bgImg from "/public/bg-images/bg-movie-app.jpeg";
+
 const categories = [
     { id: "popular", name: "Popular" },
     { id: 28, name: "Action" },
