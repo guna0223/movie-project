@@ -21,7 +21,8 @@ const Footer = () => {
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/favourite">Favorites</Link></li>
-                        <li>
+                        {/* <li><Link to="/tvshow">TvShows</Link></li> */}
+                        {/* <li>
                             <a
                                 href="https://www.themoviedb.org/"
                                 target="_blank"
@@ -29,7 +30,7 @@ const Footer = () => {
                             >
                                 TMDB API
                             </a>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
 
