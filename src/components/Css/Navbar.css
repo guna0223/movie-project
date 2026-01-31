@@ -37,6 +37,8 @@
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 20px;
+
 }
 
 /* DESKTOP LINKS */
@@ -45,7 +47,7 @@
     display: flex;
     gap: 20px;
     margin: 0;
-    padding: 0;
+    
 }
 
 /* LINK STYLE */
@@ -70,6 +72,7 @@
     border-radius: 4px;
     overflow: hidden;
     transition: all 0.3s ease;
+
 }
 
 .navbar-search-form:focus-within {
@@ -126,7 +129,7 @@
 /* ---------------- MOBILE ---------------- */
 @media (max-width: 992px) {
     .navbar-search-form {
-        display: block;
+        display: flex;
     }
 }
 
