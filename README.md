@@ -1,171 +1,113 @@
-# 🎬 Movie Explorer App
+# 🎬 Movie Explorer
 
-A modern, feature-rich movie and TV show browsing web application built with React and Vite. This application provides users with an immersive experience to explore popular movies and TV shows, search for specific titles, view detailed information, and manage a personal favorites collection that persists across sessions.
+A modern, responsive web application for browsing movies and TV shows, built with React 18 and Vite. Search titles in real-time, view detailed information, and manage your favorites list with persistent storage.
+
+![Movie Explorer Banner](./frontend/public/bg-images/bg-movie-app.jpeg)
 
 ---
 
-## 📋 Table of Contents
+## 📋 Project Overview
 
-- [✨ Features](#-features)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [🏗️ Project Structure](#️-project-structure)
-- [🚀 Getting Started](#-getting-started)
-- [📡 API Configuration](#-api-configuration)
-- [🎨 Styling](#-styling)
-- [💾 State Management](#-state-management)
-- [📱 Responsive Design](#-responsive-design)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
+Movie Explorer is a full-featured frontend application that connects to The Movie Database (TMDB) API to provide users with an immersive way to discover and explore movies and television shows. The application offers a clean, dark-themed interface with smooth navigation and responsive design that works seamlessly across all devices.
+
+This project demonstrates modern React development practices including functional components, hooks, Context API for state management, and API integration patterns. It serves as an excellent portfolio piece for showcasing frontend development skills while providing genuine utility for movie enthusiasts.
+
+The application handles API rate limiting gracefully, caches frequently accessed data, and provides immediate user feedback through loading states and error handling. LocalStorage integration ensures users can maintain their favorites collection across browser sessions without requiring authentication or backend persistence.
 
 ---
 
 ## ✨ Features
 
-### Core Functionality
+### Core Features
 
 | Feature | Description |
 |---------|-------------|
-| **🔍 Real-time Search** | Instantly search through thousands of movies and TV shows with debounced input for smooth performance. Results update dynamically as you type, providing immediate feedback. |
-| **⭐ Favorites Management** | Add or remove movies from your personal favorites list with a single click. Visual feedback confirms actions with animated icons. |
-| **📁 Dedicated Favorites Page** | A dedicated page showcasing all your favorite movies in a grid layout, easily accessible from the navigation bar. |
-| **📖 Detailed Movie Information** | Comprehensive movie details including synopsis, release date, rating, cast, and related media. |
-| **📺 TV Shows Support** | Browse and explore TV shows with dedicated detail pages showing seasons, episodes, and show information. |
-| **🌙 Dark Mode Ready** | Clean, modern UI with a dark theme aesthetic optimized for extended viewing sessions. |
+| **🎥 Movie Browsing** | Browse trending, popular, and top-rated movies with infinite scroll pagination |
+| **📺 TV Shows** | Dedicated section for exploring television series with detailed information |
+| **🔍 Real-time Search** | Instant search functionality that filters movies and TV shows as you type |
+| **⭐ Favorites Management** | Add and remove titles to your favorites list with persistent LocalStorage storage |
+| **📄 Detailed Pages** | Comprehensive movie and TV show information including cast, overview, ratings, and release dates |
+| **🌙 Dark Theme** | Beautiful dark-themed UI that's easy on the eyes and perfect for media consumption |
+| **📱 Responsive Design** | Fully responsive layout that adapts to desktop, tablet, and mobile screens |
 
 ### Technical Features
 
-| Feature | Description |
-|---------|-------------|
-| **⚡ Fast Performance** | Built with Vite for lightning-fast development server and optimized production builds. |
-| **📱 Fully Responsive** | Adaptive layout that works seamlessly across desktop, tablet, and mobile devices. |
-| **💾 Persistent Storage** | Favorites are stored in browser LocalStorage, ensuring they remain available even after page refresh or browser restart. |
-| **🔄 Context-Based State** | Efficient state management using React Context API for global data access without prop drilling. |
-| **🎯 Error Handling** | Robust error handling for API failures and network issues with user-friendly error messages. |
-| **⏳ Loading States** | Smooth loading indicators and skeleton screens while fetching data from the API. |
+- **React 18** with functional components and hooks for modern, efficient rendering
+- **Context API** for global state management without external libraries like Redux
+- **Vite** for lightning-fast development server and optimized production builds
+- **TMDB API Integration** with structured service layer for maintainable code
+- **CSS Custom Properties** for consistent theming and easy style updates
+- **Flexbox and CSS Grid** for modern, flexible layouts
+- **Component-based Architecture** for reusable and maintainable code
+- **Error Handling** with graceful fallbacks and user-friendly error messages
+- **Loading States** with skeleton loaders and spinners for better UX
 
 ---
 
-## 🛠️ Tech Stack
-
-### Frontend Framework
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **React** | 18+ | Core UI library with functional components and hooks |
-| **Vite** | 5+ | Next-generation frontend build tool |
-
-### Development Tools
+## 🛠 Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
-| ESLint | Code linting and style enforcement |
-| npm | Package management |
-
-### External Services
-
-| Service | Purpose |
-|---------|---------|
-| **TMDB API** | Movie and TV show database with comprehensive metadata |
-
-### State & Data Management
-
-| Technology | Purpose |
-|------------|---------|
-| **Context API** | Global state management for movies, favorites, and search functionality |
-| **LocalStorage** | Browser storage for persisting favorites data |
-| **Custom Hooks** | Reusable logic for API calls and state operations |
-
-### Styling
-
-| Technology | Purpose |
-|------------|---------|
-| **CSS3** | Custom styles with CSS variables for theming |
-| **Flexbox & Grid** | Modern layout techniques for responsive design |
-| **CSS Animations** | Smooth transitions and interactive feedback |
+| **React 18** | UI library for building the component-based interface |
+| **Vite** | Next-generation frontend tooling for fast development and building |
+| **JavaScript (ES6+)** | Modern JavaScript features including arrow functions, destructuring, and async/await |
+| **CSS3** | Styling with Flexbox, Grid, and custom properties |
+| **Context API** | Built-in React state management solution |
+| **TMDB API** | External API for movie and TV show data |
+| **LocalStorage** | Browser storage for persisting favorites across sessions |
+| **ESLint** | Code linting for maintaining code quality and consistency |
 
 ---
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
 ```
 movieproject/
 ├── frontend/
 │   ├── public/
-│   │   ├── bg-images/              # Background images for the application
-│   │   ├── logo/                   # Application logos and icons
-│   │   └── nav-logo/               # Navigation bar logos
+│   │   ├── bg-images/           # Background images and assets
+│   │   ├── logo/                # Application logos
+│   │   ├── logo-met-one.png
+│   │   ├── logo-met.jpg
+│   │   └── nav-logo/            # Navigation bar logos
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Css/
-│   │   │   │   ├── App.css              # Main application styles
-│   │   │   │   ├── Favorite.css         # Favorites page styles
-│   │   │   │   ├── Footer.css            # Footer component styles
-│   │   │   │   ├── index.css             # Global styles and resets
-│   │   │   │   ├── MovieCard.css         # Movie card component styles
-│   │   │   │   ├── MovieDetails.css      # Movie details page styles
-│   │   │   │   ├── Navbar.css            # Navigation bar styles
-│   │   │   │   ├── TvShows.css           # TV shows page styles
-│   │   │   │   └── TvShowsDetails.css    # TV show details styles
-│   │   │   ├── Favorite/            # Favorites related components
-│   │   │   ├── Footer/
-│   │   │   │   └── Footer.jsx        # Footer component with links and info
-│   │   │   ├── MovieCard/
-│   │   │   │   └── MovieCard.jsx     # Reusable movie card component
-│   │   │   ├── Moviedetails/
-│   │   │   │   └── MovieDetails.jsx  # Detailed movie information page
-│   │   │   ├── Navbar/
-│   │   │   │   └── Navbar.jsx        # Top navigation with search
-│   │   │   └── TvShowsDetails/
-│   │   │       └── TvShowsDetails.jsx # Detailed TV show information
+│   │   │   ├── Css/             # Shared CSS styles
+│   │   │   │   ├── App.css
+│   │   │   │   ├── Favorite.css
+│   │   │   │   ├── Footer.css
+│   │   │   │   ├── index.css
+│   │   │   │   ├── MovieCard.css
+│   │   │   │   ├── MovieDetails.css
+│   │   │   │   ├── Navbar.css
+│   │   │   │   ├── TvShows.css
+│   │   │   │   └── TvShowsDetails.css
+│   │   │   ├── Footer/          # Footer component
+│   │   │   │   └── Footer.jsx
+│   │   │   ├── MovieCard/       # Reusable movie/TV card component
+│   │   │   │   └── MovieCard.jsx
+│   │   │   ├── Moviedetails/    # Movie details page component
+│   │   │   │   └── MovieDetails.jsx
+│   │   │   ├── Navbar/          # Navigation bar component
+│   │   │   │   └── Navbar.jsx
+│   │   │   └── TvShowsDetails/  # TV show details page component
+│   │   │       └── TvShowsDetails.jsx
 │   │   ├── contexts/
-│   │   │   └── MovieContext.jsx      # Global movie state provider
+│   │   │   └── MovieContext.jsx # Global state management
 │   │   ├── pages/
-│   │   │   ├── Favorite.jsx         # User's favorite movies page
-│   │   │   ├── Home.jsx             # Main landing page with movie grid
-│   │   │   └── TvShows.jsx          # TV shows browsing page
+│   │   │   ├── Favorite.jsx     # Favorites page
+│   │   │   ├── Home.jsx         # Home/browse page
+│   │   │   └── TvShows.jsx      # TV shows browsing page
 │   │   ├── services/
-│   │   │   └── api.js               # TMDB API integration layer
-│   │   ├── App.jsx                  # Root application component
-│   │   ├── main.jsx                 # Application entry point
-│   │   └── App.css                  # App-level styles
-│   ├── index.html                   # HTML entry point
-│   ├── package.json                 # Project dependencies
-│   ├── vite.config.js               # Vite configuration
-│   ├── eslint.config.js             # ESLint configuration
-│   └── README.md                    # Project documentation
+│   │   │   └── api.js           # TMDB API service layer
+│   │   ├── App.jsx              # Main application component
+│   │   └── main.jsx             # Application entry point
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── eslint.config.js
+└── README.md
 ```
-
-### Component Details
-
-#### Pages (`src/pages/`)
-
-| Component | File | Description |
-|-----------|------|-------------|
-| **Home** | `Home.jsx` | Main landing page displaying featured and popular movies in a responsive grid layout. Includes hero section and category-based movie listings. |
-| **Favorites** | `Favorite.jsx` | Personal collection page showing all favorited movies. Users can browse and manage their saved movies here. |
-| **TV Shows** | `TvShows.jsx` | Dedicated page for browsing TV shows with similar functionality to the movies page. |
-
-#### Components (`src/components/`)
-
-| Component | Location | Description |
-|-----------|----------|-------------|
-| **Navbar** | `Navbar/Navbar.jsx` | Top navigation bar with logo, navigation links, and integrated search functionality. Responsive design with mobile menu support. |
-| **MovieCard** | `MovieCard/MovieCard.jsx` | Reusable card component displaying movie poster, title, rating, and release year. Includes favorite toggle button. |
-| **MovieDetails** | `Moviedetails/MovieDetails.jsx` | Comprehensive movie detail page showing synopsis, cast, crew, rating, genres, and related movies. |
-| **TvShowsDetails** | `TvShowsDetails/TvShowsDetails.jsx` | TV show detail page with seasons, episodes, show information, and cast details. |
-| **Footer** | `Footer/Footer.jsx` | Site footer with navigation links, copyright information, and social media links. |
-
-#### Services (`src/services/`)
-
-| Service | File | Description |
-|---------|------|-------------|
-| **API** | `api.js` | Centralized API service handling all TMDB API requests including search, movie details, TV show details, and favorites management. |
-
-#### Context (`src/contexts/`)
-
-| Context | File | Description |
-|---------|------|-------------|
-| **MovieContext** | `MovieContext.jsx` | Global state provider managing movie data, favorites list, search functionality, and loading states across the application. |
 
 ---
 
@@ -173,23 +115,19 @@ movieproject/
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
+Before you begin, ensure you have the following installed on your system:
 
-- **Node.js** (version 14.0 or higher) - [Download here](https://nodejs.org/)
-- **npm** (comes with Node.js) or **yarn** - Alternative package manager
+- **Node.js** (version 16.0 or higher) - Download from [nodejs.org](https://nodejs.org)
+- **npm** or **yarn** - Comes bundled with Node.js
 
-Verify your installation:
-```bash
-node --version
-npm --version
-```
+You will also need a **TMDB API Key** to access movie and TV show data. Instructions for obtaining one are provided in the API Configuration section below.
 
-### Installation Steps
+### Installation
 
 1. **Clone the Repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/yourusername/movieproject.git
    cd movieproject
    ```
 
@@ -201,219 +139,231 @@ npm --version
 
 3. **Install Dependencies**
 
-   Using npm:
    ```bash
    npm install
    ```
 
-   Or using yarn:
-   ```bash
-   yarn install
-   ```
+   This command installs all required dependencies defined in the `package.json` file. The process may take a few minutes on the first run as npm downloads and caches the packages.
 
-4. **Configure API Key**
+4. **Configure Environment Variables**
 
-   Before running the application, you need to configure your TMDB API key. See the [API Configuration](#-api-configuration) section below.
-
-5. **Start Development Server**
+   Create a `.env` file in the `frontend` directory:
 
    ```bash
-   npm run dev
+   touch .env
    ```
 
-   The application will start and be available at:
-   - **URL**: `http://localhost:5173`
-   - **Hot Module Replacement (HMR)** enabled for instant updates
+   Add your TMDB API key:
+
+   ```env
+   VITE_API_KEY=your_tmdb_api_key_here
+   VITE_API_BASE_URL=https://api.themoviedb.org/3
+   VITE_IMAGE_BASE_URL=https://image.tmdb.org/t/p/w500
+   ```
+
+### Running the Development Server
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`. The server supports hot module replacement (HMR), so changes to your code will automatically reflect in the browser without requiring a full reload.
 
 ### Building for Production
 
-To create a production-ready build:
+Create an optimized production build:
 
 ```bash
 npm run build
 ```
 
-The build output will be in the `dist/` directory. You can deploy this to any static hosting service.
+The build output will be in the `dist` directory, ready for deployment to any static hosting service.
 
-**Preview Production Build:**
+### Preview Production Build
+
+Preview the production build locally:
 
 ```bash
 npm run preview
 ```
 
-### Available Scripts
-
-| Script | Command | Description |
-|--------|---------|-------------|
-| `dev` | `npm run dev` | Start development server |
-| `build` | `npm run build` | Create production build |
-| `preview` | `npm run preview` | Preview production build |
-| `lint` | `npm run lint` | Run ESLint to check code quality |
-
 ---
 
-## 📡 API Configuration
+## 🔧 API Configuration
 
 ### Obtaining a TMDB API Key
 
-1. **Create a TMDB Account**
-   - Visit [The Movie Database](https://www.themoviedb.org/)
-   - Sign up for a free account
-
-2. **Request an API Key**
-   - Go to your [API settings](https://www.themoviedb.org/settings/api)
-   - Click "Request an API Key"
-   - Fill in the required information
-   - Submit and wait for approval (usually instant for developer tier)
-
-3. **Configure the Application**
-
-   Open [`src/services/api.js`](src/services/api.js) and add your API key:
-
-   ```javascript
-   const API_KEY = 'YOUR_TMDB_API_KEY_HERE';
-   const BASE_URL = 'https://api.themoviedb.org/3';
-   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
-   ```
+1. Create a free account at [The Movie Database](https://www.themoviedb.org/)
+2. Navigate to Settings > API in your account dashboard
+3. Request an API key by filling in the required information
+4. Copy your API key once approved (approval is usually instant for personal use)
 
 ### API Endpoints Used
 
-| Endpoint | Method | Purpose |
-|----------|--------|---------|
+The application uses the following TMDB API endpoints:
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
 | `/movie/popular` | GET | Fetch popular movies |
-| `/movie/now_playing` | GET | Fetch movies currently in theaters |
 | `/movie/top_rated` | GET | Fetch top-rated movies |
-| `/movie/{movie_id}` | GET | Get detailed movie information |
-| `/search/movie` | GET | Search for movies |
-| `/tv/popular` | GET | Fetch popular TV shows |
-| `/tv/{tv_id}` | GET | Get detailed TV show information |
-| `/search/tv` | GET | Search for TV shows |
+| `/movie/now_playing` | GET | Fetch now playing movies |
+| `/trending/all/week` | GET | Fetch trending content |
+| `/search/multi` | GET | Search movies and TV shows |
+| `/movie/{movie_id}` | GET | Get movie details |
+| `/tv/{tv_id}` | GET | Get TV show details |
+| `/movie/{movie_id}/similar` | GET | Get similar movies |
+| `/tv/{tv_id}/similar` | GET | Get similar TV shows |
+
+### Environment Variables
+
+Configure the following environment variables in your `.env` file:
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `VITE_API_KEY` | Your TMDB API key | `abc123def456...` |
+| `VITE_API_BASE_URL` | Base URL for TMDB API | `https://api.themoviedb.org/3` |
+| `VITE_IMAGE_BASE_URL` | Base URL for image CDN | `https://image.tmdb.org/t/p/w500` |
 
 ---
 
-## 🎨 Styling
+## 📊 State Management
 
-### CSS Architecture
+### Context API Implementation
 
-The application uses a modular CSS approach with component-specific styles:
+The application uses React's built-in Context API for global state management, specifically for managing the favorites collection. This approach eliminates the need for external state management libraries while providing a clean, predictable state architecture.
 
-- **Global Styles** (`Css/index.css`): Reset rules, typography, CSS variables, and global utilities
-- **Component Styles**: Individual CSS files for each component
-- **CSS Variables**: Consistent color palette and spacing values
+#### MovieContext (`src/contexts/MovieContext.jsx`)
 
-### Color Palette
+The `MovieContext` provides the following functionality:
 
-| Color | Usage |
-|-------|-------|
-| Primary | Brand color for buttons, links, and accents |
-| Secondary | Supporting elements and hover states |
-| Background | Page backgrounds (dark theme) |
-| Surface | Card and component backgrounds |
-| Text | Primary and secondary text colors |
-| Error | Error states and warnings |
+```javascript
+// Context provides:
+- favorites: Array of favorite movies/TV shows
+- addToFavorites(movie): Add a title to favorites
+- removeFromFavorites(movieId): Remove a title from favorites
+- isFavorite(movieId): Check if a title is in favorites
+- toggleFavorite(movie): Toggle favorite status
+```
 
-### Responsive Breakpoints
+#### Usage Example
 
-| Breakpoint | Target Devices |
-|------------|----------------|
-| `max-width: 1200px` | Large desktops |
-| `max-width: 992px` | Tablets landscape |
-| `max-width: 768px` | Tablets portrait |
-| `max-width: 576px` | Mobile devices |
+```jsx
+import { useMovieContext } from '../contexts/MovieContext';
 
----
-
-## 💾 State Management
-
-### MovieContext
-
-The [`MovieContext`](src/contexts/MovieContext.jsx) provides global state management:
-
-**Provided Data:**
-- `movies`: Array of movie objects
-- `tvShows`: Array of TV show objects
-- `favorites`: Array of favorited movie IDs
-- `searchResults`: Search query results
-- `loading`: Boolean indicating data fetch status
-- `error`: Error messages if any
-
-**Provided Functions:**
-- `fetchMovies()`: Load popular movies
-- `searchMovies(query)`: Search for movies
-- `toggleFavorite(movieId)`: Add/remove from favorites
-- `isFavorite(movieId)`: Check if a movie is favorited
+function MovieCard({ movie }) {
+  const { favorites, addToFavorites, removeFromFavorites, isFavorite } = useMovieContext();
+  
+  const isFav = isFavorite(movie.id);
+  
+  return (
+    <div className="movie-card">
+      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+      <button onClick={() => isFav ? removeFromFavorites(movie.id) : addToFavorites(movie)}>
+        {isFav ? '❤️' : '🤍'}
+      </button>
+    </div>
+  );
+}
+```
 
 ### LocalStorage Integration
 
-Favorites are persisted to LocalStorage with the key `movie_favorites`. This ensures data persists across:
-- Page refreshes
-- Browser restarts
-- Session changes
+Favorites are persisted to LocalStorage automatically, ensuring data survives browser refreshes and sessions. The context handles all LocalStorage operations internally:
+
+- **Loading**: Favorites are loaded from LocalStorage on application mount
+- **Saving**: Any change to favorites immediately syncs to LocalStorage
+- **Persistence**: Data remains available even after closing the browser
 
 ---
 
 ## 📱 Responsive Design
 
-The application is fully responsive with breakpoints for:
+The application implements a mobile-first responsive design approach using CSS Flexbox and Grid layouts. The interface adapts seamlessly across device sizes.
 
-| Viewport | Layout |
-|----------|--------|
-| **Desktop (1200px+)** | Full grid with 5-6 columns |
-| **Laptop (992px)** | 4-column grid |
-| **Tablet Landscape (768px)** | 3-column grid |
-| **Tablet Portrait (576px)** | 2-column grid |
-| **Mobile (<576px)** | Single column layout |
+### Breakpoints
 
-### Mobile Features
+| Breakpoint | Device Type | Grid Columns |
+|------------|-------------|--------------|
+| < 480px | Mobile | 1 column |
+| 480px - 768px | Large Mobile / Small Tablet | 2 columns |
+| 768px - 1024px | Tablet | 3 columns |
+| 1024px - 1200px | Small Laptop | 4 columns |
+| > 1200px | Desktop | 5 columns |
 
-- Hamburger menu for navigation
-- Touch-friendly interactive elements
-- Optimized touch targets (minimum 44x44px)
+### CSS Techniques
+
+- **CSS Custom Properties**: Used for consistent theming with `--primary-color`, `--background-color`, and other design tokens
+- **Flexbox**: Navigation, card layouts, and alignment-dependent components
+- **CSS Grid**: Main content area and responsive card grids
+- **Media Queries**: Responsive adjustments for typography, spacing, and layout
+- **Relative Units**: `rem`, `em`, `%`, and `vw/vh` for scalable design
+
+### Mobile Optimizations
+
+- Touch-friendly button sizes (minimum 44x44px)
+- Optimized image loading with lazy loading
+- Streamlined navigation for mobile users
 - Swipe-friendly card interactions
-- Stacked layouts for better readability
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! To contribute:
+Contributions are welcome! Whether you want to fix a bug, add a new feature, or improve documentation, your help is appreciated.
+
+### How to Contribute
 
 1. **Fork the Repository**
-   Click the "Fork" button at the top right of the repository page.
 
-2. **Create a Feature Branch**
+   Click the "Fork" button at the top right of this repository page to create your own fork.
+
+2. **Clone Your Fork**
+
+   ```bash
+   git clone https://github.com/YOURUSERNAME/movieproject.git
+   ```
+
+3. **Create a Feature Branch**
 
    ```bash
    git checkout -b feature/amazing-new-feature
    ```
 
-3. **Make Your Changes**
-   - Write clean, documented code
-   - Follow existing code style
-   - Add tests if applicable
+4. **Make Your Changes**
 
-4. **Commit Your Changes**
+   Implement your feature or fix, ensuring code quality and consistency.
+
+5. **Test Your Changes**
+
+   Run the application and verify your changes work correctly.
+
+6. **Commit Your Changes**
 
    ```bash
-   git commit -m 'Add amazing new feature'
+   git add .
+   git commit -m "Add amazing new feature"
    ```
 
-5. **Push to GitHub**
+7. **Push to GitHub**
 
    ```bash
    git push origin feature/amazing-new-feature
    ```
 
-6. **Create a Pull Request**
-   Go to the repository and click "New Pull Request"
+8. **Submit a Pull Request**
+
+   Open a pull request from your branch to the main repository with a clear description of your changes.
 
 ### Coding Standards
 
+- Follow ESLint configuration for code style
+- Use meaningful variable and function names
+- Write comments for complex logic
+- Keep components small and focused
 - Use functional components with hooks
-- Follow React best practices
-- Write meaningful component and variable names
-- Add comments for complex logic
-- Test your changes before submitting
+- Maintain consistent formatting
 
 ---
 
@@ -421,30 +371,25 @@ We welcome contributions! To contribute:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**MIT License Summary:**
-- ✅ Free to use for personal and commercial purposes
-- ✅ Permission to modify and distribute
-- ✅ Provided "as is" without warranty
+The MIT License grants permission to use, copy, modify, merge, publish, distribute, sublicense, and sell the software, subject to the condition that the copyright notice and permission notice appear in all copies or substantial portions of the software.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- [The Movie Database (TMDB)](https://www.themoviedb.org/) for providing an excellent movie database API
-- [React](https://reactjs.org/) community for amazing documentation and resources
-- [Vite](https://vitejs.dev/) team for the fantastic build tool
-- All contributors who help improve this project
+- **The Movie Database (TMDB)** for providing an excellent API with comprehensive movie and TV show data
+- **React Team** for creating and maintaining the React library
+- **Vite Team** for the fantastic build tooling and development experience
+- **Open Source Community** for the countless libraries and tools that make modern web development possible
+- **Contributors** who have taken time to improve this project
 
 ---
 
 ## 📞 Support
 
-If you encounter any issues or have questions:
-
-- 📧 Email: support@movieexplorer.example.com
-- 🐛 Issues: Submit via GitHub Issues
-- 📖 Documentation: Check this README and code comments
+If you have questions or need help, please open an issue on the GitHub repository or reach out to the maintainers.
 
 ---
 
-**Built with ❤️ using React and TMDB API**
+**Built with ❤️ using React and Vite**
+
