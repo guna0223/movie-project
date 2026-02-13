@@ -25,3 +25,4 @@ dist-ssr
 
 # api 
 services/api.js
+ #api.js
