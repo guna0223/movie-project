@@ -1,5 +1,6 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import MovieRow from "../MovieCard/MovieRow";
 import "../Css/MovieDetails.css";
 
 // Skeleton Loader Component

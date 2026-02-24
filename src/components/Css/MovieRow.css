@@ -1,0 +1,234 @@
+/* =======================
+   MOVIE ROW COMPONENT
+======================== */
+
+/* Row Container */
+.movie-row {
+    padding: 24px 0;
+}
+
+/* Row Title */
+.row-title {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 0 4% 16px;
+    color: #fff;
+    margin: 0;
+}
+
+/* Row Container with scroll */
+.movie-row-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Horizontal Grid */
+.movie-row-grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 4%;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar */
+.movie-row-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* =======================
+   MOVIE CARD - ROW VARIANT
+======================== */
+
+/* Row Card */
+.movie-card-row {
+    flex: 0 0 auto;
+    width: 160px;
+    min-width: 160px;
+}
+
+.movie-card-row .movie-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.movie-card-row .movie-poster {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.movie-card-row .movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover Effect */
+.movie-card-row:hover .movie-poster img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.movie-card-row .movie-info {
+    padding: 10px 2px;
+}
+
+.movie-card-row .movie-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-card-row .movie-year {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0;
+}
+
+.movie-card-row .rating-circle {
+    width: 28px;
+    height: 28px;
+    margin-top: 6px;
+    font-size: 9px;
+}
+
+/* =======================
+   SKELETON LOADER
+======================== */
+
+.movie-row-skeleton {
+    display: flex;
+    gap: 16px;
+    padding: 10px 4%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.movie-row-skeleton::-webkit-scrollbar {
+    display: none;
+}
+
+.skeleton-card {
+    flex: 0 0 auto;
+    width: 160px;
+    min-width: 160px;
+}
+
+.skeleton-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+.skeleton-title {
+    width: 80%;
+    height: 14px;
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* =======================
+   RESPONSIVE - TABLET
+======================== */
+
+@media (max-width: 992px) {
+    .movie-card-row {
+        width: 140px;
+        min-width: 140px;
+    }
+
+    .skeleton-card {
+        width: 140px;
+        min-width: 140px;
+    }
+
+    .row-title {
+        font-size: 20px;
+    }
+}
+
+/* =======================
+   RESPONSIVE - MOBILE
+======================== */
+
+@media (max-width: 768px) {
+    .movie-card-row {
+        width: 120px;
+        min-width: 120px;
+    }
+
+    .movie-card-row .movie-title {
+        font-size: 13px;
+    }
+
+    .movie-card-row .movie-year {
+        font-size: 12px;
+    }
+
+    .movie-card-row .rating-circle {
+        width: 24px;
+        height: 24px;
+        font-size: 8px;
+    }
+
+    .skeleton-card {
+        width: 120px;
+        min-width: 120px;
+    }
+
+    .row-title {
+        font-size: 18px;
+        padding: 0 4% 12px;
+    }
+
+    .movie-row-grid,
+    .movie-row-skeleton {
+        gap: 12px;
+        padding: 8px 4%;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card-row {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .movie-card-row .movie-title {
+        font-size: 12px;
+    }
+
+    .skeleton-card {
+        width: 100px;
+        min-width: 100px;
+    }
+}

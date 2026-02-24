@@ -1,17 +1,9 @@
+import MovieRow from "../components/MovieCard/MovieRow";
 import MovieCard from "../components/MovieCard/MovieCard";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getPopularMovie, getMoviesByGenre, searchMovies, getTopRatedMovies, getTopRatedTamilMovies, getTopRatedHollywoodMovies } from "../services/api";
 import "../components/Css/index.css";
-import bgImg from "/public/bg-images/bg-movie-app.jpeg";
-
-// Skeleton Loader Component
-const SkeletonCard = () => (
-    <div className="skeleton-card">
-        <div className="skeleton-poster"></div>
-        <div className="skeleton-title"></div>
-    </div>
-);
 
 const categories = [
     { id: "popular", name: "Popular" },
@@ -35,32 +27,6 @@ const categories = [
     { id: 10752, name: "War" },
     { id: 37, name: "Western" }
 ];
-
-// Horizontal Movie Row Component
-const MovieRow = ({ title, movies, loading }) => {
-    return (
-        <div className="movie-row">
-            <h2 className="row-title">{title}</h2>
-            {loading ? (
-                <div className="movie-row-grid">
-                    {[...Array(10)].map((_, index) => (
-                        <SkeletonCard key={index} />
-                    ))}
-                </div>
-            ) : (
-                <div className="movie-row-grid">
-                    {movies.length > 0 ? (
-                        movies.slice(0, 15).map((movie) => (
-                            <MovieCard movie={movie} key={movie.id} />
-                        ))
-                    ) : (
-                        <p className="no-results">No movies found</p>
-                    )}
-                </div>
-            )}
-        </div>
-    );
-};
 
 const Home = () => {
     const { query } = useParams();
@@ -191,21 +157,15 @@ const Home = () => {
         setLoading(false);
     };
 
-    if (loading) {
+    if (loading && topRatedLoading && tamilLoading && hollywoodLoading) {
         return (
             <div className="home">
                 <div className="hero-section">
-                    <img src={bgImg} alt="" className="hero-bg-img" />
                     <div className="hero-overlay"></div>
                     <div className="hero-content">
                         <h2 className="hero-title">Unlimited movies, TV shows, and more</h2>
                         <h4 className="hero-subtitle">Watch anywhere. Cancel anytime.</h4>
                     </div>
-                </div>
-                <div className="skeleton-loader">
-                    {[...Array(6)].map((_, i) => (
-                        <SkeletonCard key={i} />
-                    ))}
                 </div>
             </div>
         );
@@ -224,7 +184,6 @@ const Home = () => {
         <div className="home">
             {/* HERO SECTION */}
             <div className="hero-section">
-                <img src={bgImg} alt="" className="hero-bg-img" />
                 <div className="hero-overlay"></div>
                 <div className="hero-content">
                     <h2 className="hero-title">Unlimited movies, TV shows, and more</h2>
@@ -232,7 +191,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* TOP RATED SECTIONS - Horizontal Scroll */}
+            {/* TOP RATED SECTIONS - Using MovieRow Component */}
             <MovieRow 
                 title="Top Rated Movies" 
                 movies={topRatedMovies} 
@@ -271,7 +230,7 @@ const Home = () => {
                     <div className="movie-grid">
                         {movies.length > 0 ? (
                             movies.map((movie) => (
-                                <MovieCard movie={movie} key={movie.id} />
+                                <MovieCard key={movie.id} movie={movie} />
                             ))
                         ) : (
                             <p className="no-results">No movies found</p>

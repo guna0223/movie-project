@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Css/MovieDetails.css";
 import "../Css/MovieCard.css";
 import Swal from "sweetalert2";
-
 import { useMovieContext } from "../../contexts/MovieContext";
 
-const MovieCard = ({ movie, isTvShow = false }) => {
+const MovieCard = ({ movie, isTvShow = false, variant = "default" }) => {
     const { isFavorite, addToFavorites, removeFavorites } = useMovieContext();
     const favorite = isFavorite(movie.id);
 
@@ -17,6 +15,7 @@ const MovieCard = ({ movie, isTvShow = false }) => {
 
     function OnFavoriteClick(e) {
         e.preventDefault();
+        e.stopPropagation();
 
         if (favorite) {
             removeFavorites(movie.id);
@@ -51,12 +50,18 @@ const MovieCard = ({ movie, isTvShow = false }) => {
         return isTvShow ? `/tv/${movie.id}` : `/movie/${movie.id}`;
     };
 
+    // Different class for horizontal row variant
+    const cardClass = variant === "row" ? "movie-card movie-card-row" : "movie-card";
+
     return (
-        <div className="movie-card text-light fav-card">
-            <Link to={getDetailLink()} className="movie-card">
-                <div className="movie-poster fav-card">
+        <div className={cardClass}>
+            <Link to={getDetailLink()} className="movie-card-link">
+                <div className="movie-poster">
                     <img
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                        src={movie.poster_path 
+                            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                            : "https://via.placeholder.com/500x750?text=No+Image"
+                        }
                         className="card-img-top"
                         alt={title}
                         onError={(e) => {
@@ -65,26 +70,30 @@ const MovieCard = ({ movie, isTvShow = false }) => {
                     />
                 </div>
 
-                <button
-                    className={`btn-one ${favorite ? "active" : ""}`}
-                    onClick={OnFavoriteClick}
-                >
-                    <i className="bi bi-heart-fill"></i>
-                </button>
+                {variant !== "row" && (
+                    <button
+                        className={`btn-one ${favorite ? "active" : ""}`}
+                        onClick={OnFavoriteClick}
+                    >
+                        <i className="bi bi-heart-fill"></i>
+                    </button>
+                )}
 
                 <div className="movie-info">
-                    <h3>{title}</h3>
-                    <p>{releaseDate?.split("-")[0]}</p>
+                    <h3 className="movie-title">{title}</h3>
+                    <p className="movie-year">{releaseDate?.split("-")[0] || "N/A"}</p>
 
                     <div className="rating-circle">
                         <span>{Math.round(movie.vote_average * 10)}%</span>
                     </div>
 
-                    <p className="movie-overview">
-                        {overview && overview.length > 120
-                            ? overview.substring(0, 120) + "..."
-                            : overview || "No description available"}
-                    </p>
+                    {variant !== "row" && (
+                        <p className="movie-overview">
+                            {overview && overview.length > 120
+                                ? overview.substring(0, 120) + "..."
+                                : overview || "No description available"}
+                        </p>
+                    )}
                 </div>
             </Link>
         </div>
