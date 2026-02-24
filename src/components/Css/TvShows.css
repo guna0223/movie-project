@@ -60,8 +60,6 @@
     padding: 20px 4%;
     justify-content: center;
     background: #141414;
-    position: sticky;
-    top: 76px;
     z-index: 10;
     border-bottom: 1px solid #222;
 }

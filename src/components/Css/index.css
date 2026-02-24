@@ -65,56 +65,6 @@ body {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
-/* CATEGORY TABS */
-.category-tabs {
-    display: flex;
-    gap: 15px;
-    padding: 20px 4%;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #555 #141414;
-    border-bottom: 1px solid #222;
-    z-index: 10;
-    position: sticky;
-    top: 68px;
-    background: #141414;
-}
-
-.category-tabs::-webkit-scrollbar {
-    height: 6px;
-}
-
-.category-tabs::-webkit-scrollbar-track {
-    background: #141414;
-}
-
-.category-tabs::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 3px;
-}
-
-.category-tab {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    background: rgba(109, 109, 110, 0.7);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.2s ease;
-}
-
-.category-tab:hover {
-    background: rgba(109, 109, 110, 0.4);
-}
-
-.category-tab.active {
-    background: #fff;
-    color: #141414;
-}
-
 /* MOVIES SECTION */
 .movies-section {
     padding: 30px 0 60px;
