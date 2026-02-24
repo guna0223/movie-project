@@ -228,16 +228,16 @@
     }
 
     .hero-section {
-        height: 50vh;
-        min-height: 400px;
+        height: 40vh;
+        min-height: 300px;
     }
 
     .hero-title {
-        font-size: 36px;
+        font-size: 28px;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .tvshows-header {
@@ -270,6 +270,41 @@
     .movie-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .tvshows-page {
+        padding-top: 70px;
+    }
+
+    .hero-section {
+        height: 200px;
+        min-height: 180px;
+    }
+
+    .hero-title {
+        font-size: 18px;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+        display: none;
+    }
+
+    .hero-content {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-section {
+        height: 150px;
+        min-height: 140px;
+    }
+
+    .hero-title {
+        font-size: 16px;
     }
 }
 
