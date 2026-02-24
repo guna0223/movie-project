@@ -22,6 +22,7 @@ const MovieDetails = () => {
   const [cast, setCast] = useState([]);
   const [relatedMovies, setRelatedMovies] = useState([]);
   const [relatedLoading, setRelatedLoading] = useState(true);
+  const [showTrailer, setShowTrailer] = useState(false);
 
   const API_KEY = "0a29d0b18a015f5b930e495750ce3de4";
   const BASE_URL = "https://api.themoviedb.org/3/movie";
@@ -157,16 +158,33 @@ const MovieDetails = () => {
             <p><strong>🎬 Director:</strong> {director}</p>
           </div>
           {trailerKey && (
-            <Link
-              to={`https://www.youtube.com/watch?v=${trailerKey}`}
-              target="_blank"
+            <button
               className="trailer-btn"
+              onClick={() => setShowTrailer(true)}
             >
               <i className="bi bi-youtube"></i> Play Trailer
-            </Link>
+            </button>
           )}
         </div>
       </div>
+
+      {/* TRAILER MODAL */}
+      {showTrailer && trailerKey && (
+        <div className="trailer-modal" onClick={() => setShowTrailer(false)}>
+          <div className="trailer-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="trailer-close-btn" onClick={() => setShowTrailer(false)}>
+              <i className="bi bi-x-lg"></i>
+            </button>
+            <iframe
+              src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1`}
+              title="Movie Trailer"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
       {/* CAST SECTION */}
       <section className="cast-part">
         <div className="cast-section">
@@ -195,7 +213,7 @@ const MovieDetails = () => {
       <section className="related-movies-section">
         <div className="related-movies-container">
           <h2>Related Movies</h2>
-          
+
           {relatedLoading ? (
             <div className="related-movies-grid">
               {[...Array(8)].map((_, index) => (
@@ -205,8 +223,8 @@ const MovieDetails = () => {
           ) : relatedMovies.length > 0 ? (
             <div className="related-movies-grid">
               {relatedMovies.map((relatedMovie) => (
-                <div 
-                  className="related-movie-card" 
+                <div
+                  className="related-movie-card"
                   key={relatedMovie.id}
                   onClick={() => navigate(`/movie/${relatedMovie.id}`)}
                 >

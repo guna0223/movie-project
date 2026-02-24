@@ -141,26 +141,45 @@ const TvDetails = () => {
                 </section>
 
                 {/* SIMILAR SHOWS */}
-                <section className="siimilar-show">
+                <section className="similar-show">
                     <h2>Similar Shows</h2>
+
                     <div className="cast-grid">
-                        {similar.slice(0, 6).map(s => (
-                            <Link key={s.id} to={`/tv/${s.id}`} className="cast-card">
-                                <img
-                                    src={
-                                        s.poster_path
-                                            ? `https://image.tmdb.org/t/p/w185${s.poster_path}`
-                                            : "/placeholder.png"
-                                    }
-                                    alt={s.name}
-                                />
-                                <p>{s.name}</p>
+                        {similar.slice(0, 6).map(show => (
+                            <Link
+                                key={show.id}
+                                to={`/tv/${show.id}`}
+                                className="cast-card show-card"
+                            >
+                                <div className="poster-wrapper">
+                                    <img
+                                        src={
+                                            show.poster_path
+                                                ? `https://image.tmdb.org/t/p/w185${show.poster_path}`
+                                                : "/placeholder.png"
+                                        }
+                                        alt={show.name}
+                                    />
+
+                                    {/* ⭐ Rating badge */}
+                                    <span className="rating-badge">
+                                        ⭐ {show.vote_average?.toFixed(1)}
+                                    </span>
+                                </div>
+
+                                <p className="show-title">{show.name}</p>
+
+                                {/* 📅 Year */}
+                                <p className="show-year">
+                                    {show.first_air_date
+                                        ? show.first_air_date.slice(0, 4)
+                                        : "—"}
+                                </p>
                             </Link>
                         ))}
                     </div>
                 </section>
-
-            </section >
+            </section>
         </>
     );
 };
