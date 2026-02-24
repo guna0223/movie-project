@@ -16,9 +16,9 @@ body {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 448px;
+    height: 600px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     overflow: hidden;
 }
 
@@ -29,7 +29,19 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     z-index: -2;
+    /* Ken Burns effect - slow zoom animation */
+    animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .hero-overlay {
@@ -38,31 +50,62 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(77deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    /* Lighter gradient for full image clarity */
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
     z-index: -1;
+}
+
+/* Bottom fade to content */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #141414 0%, transparent 100%);
+    z-index: 0;
 }
 
 .hero-content {
     padding: 0 4%;
-    max-width: 500px;
+    max-width: 550px;
     z-index: 1;
+    /* Position at bottom left */
+    margin-bottom: 40px;
+    /* Subtle entrance animation */
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* TITLE */
 .hero-title {
-    font-size: 56px;
+    font-size: 64px;
     font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: 24px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    line-height: 1.2;
+    color: #ffffff;
 }
 
 /* SUBTITLE */
 .hero-subtitle {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 1.4;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    line-height: 1.5;
+    margin-bottom: 32px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    color: #ffffff;
 }
 
 /* MOVIES SECTION */
@@ -219,15 +262,15 @@ body {
 
 @media (max-width: 992px) {
     .hero-section {
-        height: 400px;
+        height: 500px;
     }
 
     .hero-title {
-        font-size: 42px;
+        font-size: 48px;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .movie-grid {
@@ -247,15 +290,15 @@ body {
 
 @media (max-width: 768px) {
     .hero-section {
-        height: 350px;
+        height: 450px;
     }
 
     .hero-title {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .category-tab {
@@ -285,15 +328,15 @@ body {
 
 @media (max-width: 500px) {
     .hero-section {
-        height: 280px;
+        height: 380px;
     }
 
     .hero-title {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .hero-subtitle {
-        font-size: 14px;
+        font-size: 15px;
         display: none;
     }
 

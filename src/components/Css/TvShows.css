@@ -16,40 +16,98 @@
     height: 70vh;
     min-height: 500px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)),
-                linear-gradient(to top, #141414, transparent),
-                url('https://image.tmdb.org/t/p/original/hiHGRbyTVam2S98ba3d17KbbgQh.jpg');
-    background-size: cover;
-    background-position: center;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+    /* Ken Burns effect - slow zoom animation */
+    animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, #141414 0%, transparent 50%);
+    /* Lighter gradient for full image clarity */
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
+    z-index: -1;
+}
+
+/* Bottom fade to content */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #141414 0%, transparent 100%);
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    text-align: center;
-    padding: 20px;
+    text-align: left;
+    padding: 20px 4%;
+    margin-bottom: 40px;
+    /* Subtle entrance animation */
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-title {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 56px;
+    font-weight: 800;
     color: #fff;
     margin-bottom: 16px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.8),
+        0 0 40px rgba(0,0,0,0.5);
+    letter-spacing: -1px;
+    line-height: 1.1;
+    /* Gradient text effect */
+    background: linear-gradient(to right, #ffffff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-subtitle {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
     color: #ccc;
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.8),
+        0 0 20px rgba(0,0,0,0.3);
 }
 
 /* CATEGORY TABS */
@@ -178,15 +236,15 @@
 
     .hero-section {
         height: 50vh;
-        min-height: 300px;
+        min-height: 400px;
     }
 
     .hero-title {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .tvshows-header {
@@ -223,8 +281,17 @@
 }
 
 @media (max-width: 500px) {
+    .hero-section {
+        height: 45vh;
+        min-height: 350px;
+    }
+
     .hero-title {
-        font-size: 24px;
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
     }
 
     .movie-grid {
