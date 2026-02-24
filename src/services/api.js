@@ -57,3 +57,20 @@ export const getTopRatedHollywoodMovies = async () => {
     const data = await response.json();
     return data.results;
 };
+
+// Language-aware Related Movies
+export const getRelatedMoviesByLanguage = async (movieId, language) => {
+    // First get similar movies
+    const response = await fetch(
+        `${BASE_URL}/movie/${movieId}/similar?api_key=${API_KEY}&language=en-US&page=1`
+    );
+    const data = await response.json();
+    
+    // Filter by language if specified
+    if (language && language !== 'en') {
+        const filtered = data.results?.filter(m => m.original_language === language) || [];
+        return filtered.slice(0, 15);
+    }
+    
+    return data.results?.slice(0, 15) || [];
+};

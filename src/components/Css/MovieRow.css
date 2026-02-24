@@ -79,6 +79,15 @@
     filter: brightness(1.1);
 }
 
+/* Overlay for row variant - show on hover */
+.movie-card-row .movie-poster {
+    position: relative;
+}
+
+.movie-card-row .movie-overlay {
+    display: block;
+}
+
 .movie-card-row .movie-info {
     padding: 10px 2px;
 }

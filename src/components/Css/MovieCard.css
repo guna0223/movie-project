@@ -16,15 +16,60 @@
 }
 
 /* POSTER */
-.movie-poster img {
+.movie-poster {
+    position: relative;
     width: 100%;
     height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: 0.3s ease;
 }
 
 .movie-card:hover .movie-poster img {
     filter: brightness(1.1);
+}
+
+/* HOVER DESCRIPTION OVERLAY */
+.movie-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 12px 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, transparent 100%);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.movie-card:hover .movie-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.overlay-description {
+    font-size: 12px;
+    color: #ddd;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Hide overlay on touch devices */
+@media (hover: none) {
+    .movie-overlay {
+        display: none;
+    }
 }
 
 /* FAVORITE BUTTON */
@@ -123,7 +168,9 @@
     padding-bottom: 12px;
     background-color: #141414;
 }
-
+.movie-card-link{
+   text-decoration: none !important;
+}
 /* RESPONSIVE */
 @media (max-width: 992px) {
     .movie-poster img {

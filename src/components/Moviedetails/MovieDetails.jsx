@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MovieRow from "../MovieCard/MovieRow";
+import { getRelatedMoviesByLanguage } from "../../services/api";
 import "../Css/MovieDetails.css";
 
 // Skeleton Loader Component
@@ -78,17 +79,15 @@ const MovieDetails = () => {
     fetchCast();
   }, [id]);
 
-  // FETCH RELATED MOVIES
+  // FETCH RELATED MOVIES (Language-Aware)
   useEffect(() => {
     const fetchRelatedMovies = async () => {
       setRelatedLoading(true);
       try {
-        const res = await fetch(
-          `${BASE_URL}/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`
-        );
-        const data = await res.json();
-        // Limit to 8-10 items
-        setRelatedMovies(data.results?.slice(0, 10) || []);
+        // Get the movie's original language
+        const language = movie?.original_language || "en";
+        const movies = await getRelatedMoviesByLanguage(id, language);
+        setRelatedMovies(movies);
       } catch (error) {
         console.error("Error fetching related movies:", error);
         setRelatedMovies([]);
@@ -96,8 +95,10 @@ const MovieDetails = () => {
         setRelatedLoading(false);
       }
     };
-    fetchRelatedMovies();
-  }, [id]);
+    if (movie) {
+      fetchRelatedMovies();
+    }
+  }, [id, movie]);
 
   if (!movie) return <h2>Loading...</h2>;
 

@@ -68,6 +68,14 @@ const MovieCard = ({ movie, isTvShow = false, variant = "default" }) => {
                             e.target.src = "https://via.placeholder.com/500x750?text=No+Image";
                         }}
                     />
+                    {/* Hover Description Preview */}
+                    <div className="movie-overlay">
+                        <p className="overlay-description">
+                            {overview && overview.length > 150
+                                ? overview.substring(0, 150) + "..."
+                                : overview || "No description available"}
+                        </p>
+                    </div>
                 </div>
 
                 {variant !== "row" && (
@@ -86,14 +94,6 @@ const MovieCard = ({ movie, isTvShow = false, variant = "default" }) => {
                     <div className="rating-circle">
                         <span>{Math.round(movie.vote_average * 10)}%</span>
                     </div>
-
-                    {variant !== "row" && (
-                        <p className="movie-overview">
-                            {overview && overview.length > 120
-                                ? overview.substring(0, 120) + "..."
-                                : overview || "No description available"}
-                        </p>
-                    )}
                 </div>
             </Link>
         </div>

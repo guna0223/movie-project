@@ -2,6 +2,7 @@ import MovieRow from "../components/MovieCard/MovieRow";
 import MovieCard from "../components/MovieCard/MovieCard";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import bgimg from "public/bg-images/bg-movie-app.jpg"
 import { getPopularMovie, getMoviesByGenre, searchMovies, getTopRatedMovies, getTopRatedTamilMovies, getTopRatedHollywoodMovies } from "../services/api";
 import "../components/Css/index.css";
 
@@ -186,6 +187,7 @@ const Home = () => {
             <div className="hero-section">
                 <div className="hero-overlay"></div>
                 <div className="hero-content">
+                    <img src={bgimg} alt="" />
                     <h2 className="hero-title">Unlimited movies, TV shows, and more</h2>
                     <h4 className="hero-subtitle">Watch anywhere. Cancel anytime.</h4>
                 </div>

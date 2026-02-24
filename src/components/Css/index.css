@@ -74,6 +74,10 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #555 #141414;
     border-bottom: 1px solid #222;
+    z-index: 10;
+    position: sticky;
+    top: 68px;
+    background: #141414;
 }
 
 .category-tabs::-webkit-scrollbar {
