@@ -244,17 +244,30 @@
 .trailer-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 10px;
     margin-top: 22px;
-
+    padding: 14px 28px;
     background: #e50914;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 18px;
-    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
     font-weight: 600;
     color: #fff;
-    transition: 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trailer-btn:hover {
+    background: #f40612;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(229, 9, 20, 0.4);
+}
+
+.trailer-btn:active {
+    transform: translateY(0);
 }
 
 .trailer-btn:hover {
