@@ -308,23 +308,3 @@
     }
 }
 
-@media (max-width: 500px) {
-    .hero-section {
-        height: 45vh;
-        min-height: 350px;
-    }
-
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .movie-grid {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        gap: 10px;
-    }
-}
-
