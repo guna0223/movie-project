@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import "../Css/TvShowsDetails.css";
 
 const API_KEY = "0a29d0b18a015f5b930e495750ce3de4";
 
 const TvDetails = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [show, setShow] = useState(null);
     const [credits, setCredits] = useState(null);
@@ -13,6 +14,7 @@ const TvDetails = () => {
     const [providers, setProviders] = useState(null);
     const [episodes, setEpisodes] = useState([]);
     const [similar, setSimilar] = useState([]);
+    const [showTrailer, setShowTrailer] = useState(false);
 
     useEffect(() => {
         // SHOW DETAILS
@@ -95,18 +97,41 @@ const TvDetails = () => {
                             <p><strong>Watch on:</strong> {providers.flatrate.map(p => p.provider_name).join(", ")}</p>
                         )}
                         {trailer && (
-                            <a
+                            <button
                                 className="trailer-btn"
-                                href={`https://www.youtube.com/watch?v=${trailer.key}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                onClick={() => setShowTrailer(true)}
                             >
-                                <i class="bi bi-youtube"></i> Watch Trailer
-                            </a>
+                                <i className="bi bi-youtube"></i> Watch Trailer
+                            </button>
                         )}
                     </div>
 
                 </div>
+
+                {/* TRAILER MODAL */}
+                {showTrailer && trailer && (
+                    <div className="trailer-modal" onClick={() => setShowTrailer(false)}>
+                        <div className="trailer-modal-content" onClick={(e) => e.stopPropagation()}>
+                            <button 
+                                className="trailer-close-btn" 
+                                onClick={() => {
+                                    setShowTrailer(false);
+                                    navigate(-1);
+                                }}
+                                aria-label="Close trailer and go back"
+                            >
+                                <i className="bi bi-x-lg"></i>
+                            </button>
+                            <iframe
+                                src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1`}
+                                title="TV Show Trailer"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    </div>
+                )}
                 {/* CAST */}
                 <section className="cast-section">
                     <h2>Cast</h2>

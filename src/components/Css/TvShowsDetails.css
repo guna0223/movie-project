@@ -187,6 +187,111 @@
 .cast-card{
     text-decoration: none;
 }
+
+/* ------------------------------------------------------
+   TRAILER MODAL
+------------------------------------------------------ */
+.trailer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.trailer-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.trailer-modal-content iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.trailer-close-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    background: rgba(42, 42, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.trailer-close-btn:hover {
+    background: #e50914;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+    border-color: #e50914;
+}
+
+.trailer-close-btn:active {
+    transform: scale(0.95);
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+    .trailer-modal {
+        padding: 15px;
+    }
+
+    .trailer-modal-content {
+        max-width: 100%;
+    }
+
+    .trailer-close-btn {
+        top: -40px;
+        right: 0;
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+}
+
+/* Tablet responsive */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .trailer-close-btn {
+        top: -45px;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+}
+
 /* ------------------------------------------------------
    EPISODES ACCORDION
 ------------------------------------------------------ */

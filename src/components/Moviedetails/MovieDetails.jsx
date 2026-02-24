@@ -172,7 +172,14 @@ const MovieDetails = () => {
       {showTrailer && trailerKey && (
         <div className="trailer-modal" onClick={() => setShowTrailer(false)}>
           <div className="trailer-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="trailer-close-btn" onClick={() => setShowTrailer(false)}>
+            <button 
+              className="trailer-close-btn" 
+              onClick={() => {
+                setShowTrailer(false);
+                navigate(-1);
+              }}
+              aria-label="Close trailer and go back"
+            >
               <i className="bi bi-x-lg"></i>
             </button>
             <iframe
