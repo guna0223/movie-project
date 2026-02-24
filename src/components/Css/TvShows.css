@@ -7,7 +7,95 @@
 .tvshows-page {
     min-height: 100vh;
     background: #141414;
-    padding-top: 100px;
+    padding-top: 76px;
+}
+
+/* HERO SECTION */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)),
+                linear-gradient(to top, #141414, transparent),
+                url('https://image.tmdb.org/t/p/original/hiHGRbyTVam2S98ba3d17KbbgQh.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #141414 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+/* CATEGORY TABS */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px 4%;
+    justify-content: center;
+    background: #141414;
+    position: sticky;
+    top: 76px;
+    z-index: 10;
+    border-bottom: 1px solid #222;
+}
+
+.category-tab {
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.category-tab:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+.category-tab.active {
+    background: #e50914;
+    color: #fff;
+    border-color: #e50914;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    padding: 20px 4%;
 }
 
 /* HEADER */
@@ -71,11 +159,36 @@
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 15px;
     }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .category-tabs {
+        padding: 15px 20px;
+    }
 }
 
 @media (max-width: 768px) {
     .tvshows-page {
-        padding-top: 80px;
+        padding-top: 76px;
+    }
+
+    .hero-section {
+        height: 50vh;
+        min-height: 300px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
     }
 
     .tvshows-header {
@@ -84,6 +197,21 @@
 
     .page-title {
         font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        padding: 15px 20px;
+    }
+
+    .category-tabs {
+        padding: 12px 15px;
+        gap: 8px;
+    }
+
+    .category-tab {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 
     .container-fluid {
@@ -97,6 +225,10 @@
 }
 
 @media (max-width: 500px) {
+    .hero-title {
+        font-size: 24px;
+    }
+
     .movie-grid {
         grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
         gap: 10px;
