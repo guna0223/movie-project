@@ -328,25 +328,30 @@ body {
 
 @media (max-width: 500px) {
     .hero-section {
-        height: 380px;
+        height: 300px;
     }
 
     .hero-title {
-        font-size: 28px;
+        font-size: 22px;
     }
 
     .hero-subtitle {
-        font-size: 15px;
+        font-size: 13px;
         display: none;
     }
 
+    .hero-content {
+        margin-bottom: 20px;
+    }
+
     .category-tabs {
-        padding: 15px 20px;
+        padding: 10px 15px;
+        gap: 8px;
     }
 
     .category-tab {
-        padding: 5px 12px;
-        font-size: 12px;
+        padding: 5px 10px;
+        font-size: 11px;
     }
 
     .movie-grid {
@@ -355,7 +360,7 @@ body {
     }
 
     .container-fluid {
-        padding: 0 20px;
+        padding: 0 15px;
     }
 
     .movie-row-grid {
@@ -369,5 +374,21 @@ body {
 
     .skeleton-poster {
         height: 150px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+    .hero-section {
+        height: 250px;
+    }
+
+    .hero-title {
+        font-size: 18px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 8px;
     }
 }

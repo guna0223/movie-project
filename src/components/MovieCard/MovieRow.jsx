@@ -15,12 +15,12 @@ export const MovieRowSkeleton = () => (
 );
 
 // MovieRow Component
-const MovieRow = ({ 
-    title, 
-    movies = [], 
-    loading = false, 
+const MovieRow = ({
+    title,
+    movies = [],
+    loading = false,
     isTvShow = false,
-    showTitle = true 
+    showTitle = true
 }) => {
     if (loading) {
         return (
@@ -36,21 +36,24 @@ const MovieRow = ({
     }
 
     return (
-        <section className="movie-row">
-            {showTitle && <h2 className="row-title">{title}</h2>}
-            <div className="movie-row-container">
-                <div className="movie-row-grid">
-                    {movies.slice(0, 15).map((movie) => (
-                        <MovieCard 
-                            key={movie.id} 
-                            movie={movie} 
-                            isTvShow={isTvShow}
-                            variant="row"
-                        />
-                    ))}
+        <>
+            <section className="movie-row">
+                {showTitle && <h2 className="row-title">{title}</h2>}
+                <div className="movie-row-container">
+                    <div className="movie-row-grid">
+                        {movies.slice(0, 15).map((movie) => (
+                            <MovieCard
+                                key={movie.id}
+                                movie={movie}
+                                isTvShow={isTvShow}
+                                variant="row"
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <hr />
+        </>
     );
 };
 

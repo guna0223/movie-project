@@ -100,7 +100,7 @@
     text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
-/* CATEGORY TABS */
+/* CATEGORY TABS - MovieCard Theme */
 .category-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -113,27 +113,30 @@
 }
 
 .category-tab {
-    background: transparent;
-    border: 1px solid #444;
-    color: #aaa;
-    padding: 8px 16px;
-    border-radius: 20px;
+    background: #1a1a1a;
+    border: none;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
+    /* MovieCard-like styling */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .category-tab:hover {
     background: #fff;
     color: #000;
-    border-color: #fff;
+    transform: scale(1.05);
 }
 
 .category-tab.active {
     background: #e50914;
     color: #fff;
-    border-color: #e50914;
+    transform: scale(1.05);
 }
 
 /* SECTION TITLE */

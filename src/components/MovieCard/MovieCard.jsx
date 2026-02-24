@@ -54,49 +54,51 @@ const MovieCard = ({ movie, isTvShow = false, variant = "default" }) => {
     const cardClass = variant === "row" ? "movie-card movie-card-row" : "movie-card";
 
     return (
-        <div className={cardClass}>
-            <Link to={getDetailLink()} className="movie-card-link">
-                <div className="movie-poster">
-                    <img
-                        src={movie.poster_path 
-                            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                            : "https://via.placeholder.com/500x750?text=No+Image"
-                        }
-                        className="card-img-top"
-                        alt={title}
-                        onError={(e) => {
-                            e.target.src = "https://via.placeholder.com/500x750?text=No+Image";
-                        }}
-                    />
-                    {/* Hover Description Preview */}
-                    <div className="movie-overlay">
-                        <p className="overlay-description">
-                            {overview && overview.length > 150
-                                ? overview.substring(0, 150) + "..."
-                                : overview || "No description available"}
-                        </p>
+        <>
+            <div className={cardClass}>
+                <Link to={getDetailLink()} className="movie-card-link">
+                    <div className="movie-poster">
+                        <img
+                            src={movie.poster_path
+                                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                                : "https://via.placeholder.com/500x750?text=No+Image"
+                            }
+                            className="card-img-top"
+                            alt={title}
+                            onError={(e) => {
+                                e.target.src = "https://via.placeholder.com/500x750?text=No+Image";
+                            }}
+                        />
+                        {/* Hover Description Preview */}
+                        <div className="movie-overlay">
+                            <p className="overlay-description">
+                                {overview && overview.length > 150
+                                    ? overview.substring(0, 150) + "..."
+                                    : overview || "No description available"}
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                {variant !== "row" && (
-                    <button
-                        className={`btn-one ${favorite ? "active" : ""}`}
-                        onClick={OnFavoriteClick}
-                    >
-                        <i className="bi bi-heart-fill"></i>
-                    </button>
-                )}
+                    {variant !== "row" && (
+                        <button
+                            className={`btn-one ${favorite ? "active" : ""}`}
+                            onClick={OnFavoriteClick}
+                        >
+                            <i className="bi bi-heart-fill"></i>
+                        </button>
+                    )}
 
-                <div className="movie-info">
-                    <h3 className="movie-title">{title}</h3>
-                    <p className="movie-year">{releaseDate?.split("-")[0] || "N/A"}</p>
+                    <div className="movie-info">
+                        <h3 className="movie-title">{title}</h3>
+                        <p className="movie-year">{releaseDate?.split("-")[0] || "N/A"}</p>
 
-                    <div className="rating-circle">
-                        <span>{Math.round(movie.vote_average * 10)}%</span>
+                        <div className="rating-circle">
+                            <span>{Math.round(movie.vote_average * 10)}%</span>
+                        </div>
                     </div>
-                </div>
-            </Link>
-        </div>
+                </Link>
+            </div>
+        </>
     );
 };
 
