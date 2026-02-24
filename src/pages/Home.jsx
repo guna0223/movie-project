@@ -190,7 +190,7 @@ const Home = () => {
                 <div className="hero-content">
                     
                     <h2 className="hero-title">Unlimited movies, TV shows, and more</h2>
-                    <h4 className="hero-subtitle">Watch anywhere. Cancel anytime.</h4>
+                    <h4 className="hero-subtitle">Watch anywhere...</h4>
                 </div>
             </div>
 

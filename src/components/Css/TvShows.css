@@ -86,28 +86,18 @@
 
 .hero-title {
     font-size: 56px;
-    font-weight: 800;
+    font-weight: 700;
     color: #fff;
     margin-bottom: 16px;
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.8),
-        0 0 40px rgba(0,0,0,0.5);
-    letter-spacing: -1px;
-    line-height: 1.1;
-    /* Gradient text effect */
-    background: linear-gradient(to right, #ffffff 0%, #e0e0e0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    line-height: 1.2;
 }
 
 .hero-subtitle {
     font-size: 22px;
     font-weight: 400;
-    color: #ccc;
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.8),
-        0 0 20px rgba(0,0,0,0.3);
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 /* CATEGORY TABS */
