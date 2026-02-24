@@ -45,23 +45,26 @@
    MOVIE CARD - ROW VARIANT
 ======================== */
 
-/* Row Card */
+/* Row Card - Netflix style fixed size */
 .movie-card-row {
     flex: 0 0 auto;
-    width: 160px;
-    min-width: 160px;
+    width: 200px;
+    min-width: 200px;
+    height: 300px;
 }
 
 .movie-card-row .movie-card-link {
     display: block;
     text-decoration: none;
     color: inherit;
+    width: 100%;
+    height: 100%;
 }
 
 .movie-card-row .movie-poster {
     position: relative;
     width: 100%;
-    aspect-ratio: 2/3;
+    height: 100%;
     overflow: hidden;
     border-radius: 8px;
 }
@@ -133,13 +136,13 @@
 
 .skeleton-card {
     flex: 0 0 auto;
-    width: 160px;
-    min-width: 160px;
+    width: 200px;
+    min-width: 200px;
 }
 
 .skeleton-poster {
     width: 100%;
-    aspect-ratio: 2/3;
+    height: 300px;
     background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
@@ -171,13 +174,18 @@
 
 @media (max-width: 992px) {
     .movie-card-row {
-        width: 140px;
-        min-width: 140px;
+        width: 160px;
+        min-width: 160px;
+        height: 240px;
     }
 
     .skeleton-card {
-        width: 140px;
-        min-width: 140px;
+        width: 160px;
+        min-width: 160px;
+    }
+
+    .skeleton-poster {
+        height: 240px;
     }
 
     .row-title {
@@ -191,8 +199,9 @@
 
 @media (max-width: 768px) {
     .movie-card-row {
-        width: 120px;
-        min-width: 120px;
+        width: 140px;
+        min-width: 140px;
+        height: 210px;
     }
 
     .movie-card-row .movie-title {
@@ -210,8 +219,12 @@
     }
 
     .skeleton-card {
-        width: 120px;
-        min-width: 120px;
+        width: 140px;
+        min-width: 140px;
+    }
+
+    .skeleton-poster {
+        height: 210px;
     }
 
     .row-title {
@@ -228,8 +241,9 @@
 
 @media (max-width: 480px) {
     .movie-card-row {
-        width: 100px;
-        min-width: 100px;
+        width: 110px;
+        min-width: 110px;
+        height: 165px;
     }
 
     .movie-card-row .movie-title {
@@ -237,7 +251,11 @@
     }
 
     .skeleton-card {
-        width: 100px;
-        min-width: 100px;
+        width: 110px;
+        min-width: 110px;
+    }
+
+    .skeleton-poster {
+        height: 165px;
     }
 }

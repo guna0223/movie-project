@@ -262,7 +262,8 @@ body {
 
 @media (max-width: 992px) {
     .hero-section {
-        height: 500px;
+        height: 100px !important;
+        
     }
 
     .hero-title {

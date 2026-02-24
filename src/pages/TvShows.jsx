@@ -100,7 +100,7 @@ const TvShows = () => {
         setLoading(true);
         setActiveCategory(categoryId);
         setSearchQuery("");
-        
+
         if (categoryId === "popular") {
             try {
                 const res = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`);
@@ -129,12 +129,15 @@ const TvShows = () => {
         <div className="tvshows-page">
             {/* HERO SECTION */}
             <div className="hero-section">
+                <img src="/bg-images/bg-movie-app.jpeg" alt="" className="hero-bg-img" />
                 <div className="hero-overlay"></div>
                 <div className="hero-content">
-                    <h2 className="hero-title">Unlimited TV Shows</h2>
-                    <h4 className="hero-subtitle">Watch anywhere. Cancel anytime.</h4>
+
+                    <h2 className="hero-title">Unlimited movies, TV shows, and more</h2>
+                    <h4 className="hero-subtitle">Watch anywhere...</h4>
                 </div>
             </div>
+
 
             {/* CATEGORY TABS - Netflix Style */}
             <div className="category-tabs">
