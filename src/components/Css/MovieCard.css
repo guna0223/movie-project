@@ -127,6 +127,14 @@
     font-size: 14px;
 }
 
+/* Show rating inline with year */
+.movie-info .rating-circle {
+    display: inline-flex;
+    margin-top: 8px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /* TMDB ROUND RATING */
 .rating-circle {
     width: 32px;
