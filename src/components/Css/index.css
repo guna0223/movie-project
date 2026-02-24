@@ -329,20 +329,20 @@ body {
 
 @media (max-width: 500px) {
     .hero-section {
-        height: 300px;
+        height: 200px;
     }
 
     .hero-title {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .hero-subtitle {
-        font-size: 13px;
+        font-size: 12px;
         display: none;
     }
 
     .hero-content {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .category-tabs {
