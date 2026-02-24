@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { searchMovies } from "../../services/api";
-import "../Css/SearchResult.css.css";
+import "../Css/SearchResult.css";
 
 const SearchResult = () => {
     const { query } = useParams();
