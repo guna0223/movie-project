@@ -11,6 +11,7 @@ import "./components/Css/index.css"
 import MovieDetails from "./components/Moviedetails/MovieDetails.jsx";
 import TvShows from "./pages/TvShows";
 import TvDetails from "./components/TvShowsDetails/TvShowsDetails.jsx";
+import SearchResult from "./components/SearchResult/SearchResult.jsx";
 
 
 const router = createBrowserRouter([
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       { path: "favourite", element: <Favorite /> },
       { path: "Movie/:id", element: <MovieDetails /> },
       { path: "tv/:id", element: <TvDetails /> },
-      { path: "search/:query", element: <Home /> },
+      { path: "search/:query", element: <SearchResult /> },
       { path: "TvShows", element: <TvShows /> }
     ],
   },
