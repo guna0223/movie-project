@@ -262,8 +262,7 @@ body {
 
 @media (max-width: 992px) {
     .hero-section {
-        height: 50px !important ;
-        
+        height: 500px;
     }
 
     .hero-title {
@@ -329,7 +328,7 @@ body {
 
 @media (max-width: 500px) {
     .hero-section {
-        height: 200px;
+        height: 300px;
     }
 
     .hero-title {
@@ -381,7 +380,7 @@ body {
 /* Extra small screens */
 @media (max-width: 380px) {
     .hero-section {
-        height: 150px;
+        height: 250px;
     }
 
     .hero-title {
@@ -393,3 +392,4 @@ body {
         gap: 8px;
     }
 }
+

@@ -10,95 +10,6 @@
     padding-top: 76px;
 }
 
-/* HERO SECTION */
-.hero-section {
-    position: relative;
-    height: 70vh;
-    min-height: 500px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    overflow: hidden;
-}
-
-.hero-bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: -2;
-    /* Ken Burns effect - slow zoom animation */
-    animation: kenBurns 20s ease-in-out infinite alternate;
-}
-
-@keyframes kenBurns {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    /* Lighter gradient for full image clarity */
-    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
-    z-index: -1;
-}
-
-/* Bottom fade to content */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to top, #141414 0%, transparent 100%);
-    z-index: 0;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: left;
-    padding: 20px 4%;
-    margin-bottom: 40px;
-    /* Subtle entrance animation */
-    animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-title {
-    font-size: 56px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 16px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    line-height: 1.2;
-}
-
-.hero-subtitle {
-    font-size: 22px;
-    font-weight: 400;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-}
 
 /* CATEGORY TABS - MovieCard Theme */
 .category-tabs {
@@ -208,15 +119,6 @@
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 15px;
     }
-
-    .hero-title {
-        font-size: 36px;
-    }
-
-    .hero-subtitle {
-        font-size: 18px;
-    }
-
     .category-tabs {
         padding: 15px 20px;
     }
@@ -226,20 +128,6 @@
     .tvshows-page {
         padding-top: 76px;
     }
-
-    .hero-section {
-        height: 40vh;
-        min-height: 300px;
-    }
-
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
     .tvshows-header {
         padding: 0 20px 20px;
     }
@@ -277,21 +165,6 @@
     .tvshows-page {
         padding-top: 70px;
     }
-
-    .hero-section {
-        height: 200px;
-        min-height: 180px;
-    }
-
-    .hero-title {
-        font-size: 18px;
-    }
-
-    .hero-subtitle {
-        font-size: 12px;
-        display: none;
-    }
-
     .hero-content {
         margin-bottom: 15px;
     }

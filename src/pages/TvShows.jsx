@@ -127,18 +127,6 @@ const TvShows = () => {
 
     return (
         <div className="tvshows-page">
-            {/* HERO SECTION */}
-            <div className="hero-section">
-                <img src="/bg-images/bg-movie-app.jpeg" alt="" className="hero-bg-img" />
-                <div className="hero-overlay"></div>
-                <div className="hero-content">
-
-                    <h2 className="hero-title">Unlimited movies, TV shows, and more</h2>
-                    <h4 className="hero-subtitle">Watch anywhere...</h4>
-                </div>
-            </div>
-
-
             {/* CATEGORY TABS - Netflix Style */}
             <div className="category-tabs">
                 {tvCategories.map(cat => (
