@@ -2,6 +2,15 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../Css/MovieDetails.css";
 
+// Skeleton Loader Component
+const SkeletonCard = () => (
+  <div className="related-skeleton-card">
+    <div className="related-skeleton-poster"></div>
+    <div className="related-skeleton-title"></div>
+    <div className="related-skeleton-year"></div>
+  </div>
+);
+
 const MovieDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -11,6 +20,8 @@ const MovieDetails = () => {
   const [trailerKey, setTrailerKey] = useState("");
   const [providers, setProviders] = useState([]);
   const [cast, setCast] = useState([]);
+  const [relatedMovies, setRelatedMovies] = useState([]);
+  const [relatedLoading, setRelatedLoading] = useState(true);
 
   const API_KEY = "0a29d0b18a015f5b930e495750ce3de4";
   const BASE_URL = "https://api.themoviedb.org/3/movie";
@@ -63,6 +74,27 @@ const MovieDetails = () => {
       setCast(data.cast || []);
     };
     fetchCast();
+  }, [id]);
+
+  // FETCH RELATED MOVIES
+  useEffect(() => {
+    const fetchRelatedMovies = async () => {
+      setRelatedLoading(true);
+      try {
+        const res = await fetch(
+          `${BASE_URL}/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`
+        );
+        const data = await res.json();
+        // Limit to 8-10 items
+        setRelatedMovies(data.results?.slice(0, 10) || []);
+      } catch (error) {
+        console.error("Error fetching related movies:", error);
+        setRelatedMovies([]);
+      } finally {
+        setRelatedLoading(false);
+      }
+    };
+    fetchRelatedMovies();
   }, [id]);
 
   if (!movie) return <h2>Loading...</h2>;
@@ -156,7 +188,57 @@ const MovieDetails = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* RELATED MOVIES SECTION */}
+      <section className="related-movies-section">
+        <div className="related-movies-container">
+          <h2>Related Movies</h2>
           
+          {relatedLoading ? (
+            <div className="related-movies-grid">
+              {[...Array(8)].map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+            </div>
+          ) : relatedMovies.length > 0 ? (
+            <div className="related-movies-grid">
+              {relatedMovies.map((relatedMovie) => (
+                <div 
+                  className="related-movie-card" 
+                  key={relatedMovie.id}
+                  onClick={() => navigate(`/movie/${relatedMovie.id}`)}
+                >
+                  <div className="related-movie-poster">
+                    {relatedMovie.poster_path ? (
+                      <img
+                        src={`https://image.tmdb.org/t/p/w342${relatedMovie.poster_path}`}
+                        alt={relatedMovie.title}
+                      />
+                    ) : (
+                      <div className="no-poster">No Image</div>
+                    )}
+                  </div>
+                  <div className="related-movie-info">
+                    <h4 className="related-movie-title">
+                      {relatedMovie.title}
+                    </h4>
+                    <p className="related-movie-year">
+                      {relatedMovie.release_date?.split("-")[0] || "N/A"}
+                    </p>
+                    {relatedMovie.vote_average > 0 && (
+                      <p className="related-movie-rating">
+                        ⭐ {relatedMovie.vote_average.toFixed(1)}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="no-related-movies">No related movies found.</p>
+          )}
         </div>
       </section>
     </>
