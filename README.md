@@ -8,25 +8,7 @@ A modern, responsive web application for browsing movies and TV shows, built wit
 
 ## 📋 Project Overview
 
-Movie Explorer is a full-featured frontend application that connects to The Movie Database (TMDB) API to provide users with an immersive way to discover and explore movies and television shows. The application offers a clean, dark-themed interface with smooth navigation and responsive design that works seamlessly across all devices.
-
-This project demonstrates modern React development practices including functional components, hooks, Context API for state management, and API integration patterns. It serves as an excellent portfolio piece for showcasing frontend development skills while providing genuine utility for movie enthusiasts.
-
-The application handles API rate limiting gracefully, caches frequently accessed data, and provides immediate user feedback through loading states and error handling. LocalStorage integration ensures users can maintain their favorites collection across browser sessions without requiring authentication or backend persistence.
-
----
-
-## ✨ Features
-
-### Core Features
-
-| Feature | Description |
-|---------|-------------|
-| **🎥 Movie Browsing** | Browse trending, popular, and top-rated movies with infinite scroll pagination |
-| **📺 TV Shows** | Dedicated section for exploring television series with detailed information |
-| **🔍 Real-time Search** | Instant search functionality that filters movies and TV shows as you type |
-| **⭐ Favorites Management** | Add and remove titles to your favorites list with persistent LocalStorage storage |
-| **📄 Detailed Pages** | Comprehensive movie and TV show information including cast, overview, ratings, and release dates |
+Movie Explorer is a full-featured frontend applica10349215tion that connects to The Movie Database ( and TV show information including cast, overview, ratings, and release dates |
 | **🌙 Dark Theme** | Beautiful dark-themed UI that's easy on the eyes and perfect for media consumption |
 | **📱 Responsive Design** | Fully responsive layout that adapts to desktop, tablet, and mobile screens |
 
