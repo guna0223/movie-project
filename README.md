@@ -371,25 +371,5 @@ Contributions are welcome! Whether you want to fix a bug, add a new feature, or 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The MIT License grants permission to use, copy, modify, merge, publish, distribute, sublicense, and sell the software, subject to the condition that the copyright notice and permission notice appear in all copies or substantial portions of the software.
-
----
-
-## 🙏 Acknowledgments
-
-- **The Movie Database (TMDB)** for providing an excellent API with comprehensive movie and TV show data
-- **React Team** for creating and maintaining the React library
-- **Vite Team** for the fantastic build tooling and development experience
-- **Open Source Community** for the countless libraries and tools that make modern web development possible
-- **Contributors** who have taken time to improve this project
-
----
-
-## 📞 Support
-
-If you have questions or need help, please open an issue on the GitHub repository or reach out to the maintainers.
-
----
-
-**Built with ❤️ using React and Vite**
+The MIT License grants permission to use, copy, modify, merge, publish, distribute, sublicense, and sell the 
 
