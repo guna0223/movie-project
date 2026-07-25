@@ -1,33 +1,6 @@
 # 🎬 Movie Explorer
 
-A modern, responsive web application for browsing movies and TV shows, built with React 18 and Vite. Search titles in real-time, view detailed information, and manage your favorites list with persistent storage.
-
-![Movie Explorer Banner](./frontend/public/bg-images/bg-movie-app.jpeg)
-
----
-
-## 📋 Project Overview
-
- and user-friendly error messages
-- **Loading States** with skeleton loaders and spinners for better UX
-
----
-
-## 🛠 Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| **React 18** | UI library for building the component-based interface |
-| **Vite** | Next-generation frontend tooling for fast development and building |
-| **JavaScript (ES6+)** | Modern JavaScript features including arrow functions, destructuring, and async/await |
-| **CSS3** | Styling with Flexbox, Grid, and custom properties |
-| **Context API** | Built-in React state management solution |
-| **TMDB API** | External API for movie and TV show data |
-| **LocalStorage** | Browser storage for persisting favorites across sessions |
-| **ESLint** | Code linting for maintaining code quality and consistency |
-
----
-
+A modern, responsive web application for 
 ## 📁 Project Structure
 
 ```
