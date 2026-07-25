@@ -121,31 +121,7 @@ Before you begin, ensure you have the following installed on your system:
 - **npm** or **yarn** - Comes bundled with Node.js
 
 You will also need a **TMDB API Key** to access movie and TV show data. Instructions for obtaining one are provided in the API Configuration section below.
-
-### Installation
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/movieproject.git
-   cd movieproject
-   ```
-
-2. **Navigate to Frontend Directory**
-
-   ```bash
-   cd frontend
-   ```
-
-3. **Install Dependencies**
-
-   ```bash
-   npm install
-   ```
-
-   This command installs all required dependencies defined in the `package.json` file. The process may take a few minutes on the first run as npm downloads and caches the packages.
-
-4. **Configure Environment Variables**
+**
 
    Create a `.env` file in the `frontend` directory:
 
