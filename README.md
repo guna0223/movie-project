@@ -8,20 +8,7 @@ A modern, responsive web application for browsing movies and TV shows, built wit
 
 ## 📋 Project Overview
 
-Movie Explorer is a full-featured frontend applica10349215tion that connects to The Movie Database ( and TV show information including cast, overview, ratings, and release dates |
-| **🌙 Dark Theme** | Beautiful dark-themed UI that's easy on the eyes and perfect for media consumption |
-| **📱 Responsive Design** | Fully responsive layout that adapts to desktop, tablet, and mobile screens |
-
-### Technical Features
-
-- **React 18** with functional components and hooks for modern, efficient rendering
-- **Context API** for global state management without external libraries like Redux
-- **Vite** for lightning-fast development server and optimized production builds
-- **TMDB API Integration** with structured service layer for maintainable code
-- **CSS Custom Properties** for consistent theming and easy style updates
-- **Flexbox and CSS Grid** for modern, flexible layouts
-- **Component-based Architecture** for reusable and maintainable code
-- **Error Handling** with graceful fallbacks and user-friendly error messages
+ and user-friendly error messages
 - **Loading States** with skeleton loaders and spinners for better UX
 
 ---
